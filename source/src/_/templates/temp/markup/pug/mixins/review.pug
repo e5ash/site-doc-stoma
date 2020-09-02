@@ -1,0 +1,9 @@
+mixin review(date, img, text, name)
+	.reviews__item.review
+		.review__data.row
+			.review__date=date
+			.review__stars
+		.review__img.img
+			+img(img)
+		.review__text=text
+		.review__name=name

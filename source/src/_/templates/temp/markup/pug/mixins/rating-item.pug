@@ -1,0 +1,14 @@
+mixin ri(img, count, imgs)
+	.rating__item.ri
+		.ri__head
+			.ri__img
+				+img(img)
+			.ri__count
+				.ri__count-wrap
+				.ri__count-title=count
+			a.ri__btn.btn.--bg-blue.--md(href="", target="_blank") Все отзывы
+		.ri__body
+			.ri__list.row.--w2
+				each img in imgs
+					.ri__item
+						+img(img)

@@ -1,0 +1,17 @@
+mixin service(name, price, img, data)
+	.services__item.service.--bg
+		.service__img.img(style="background-image: url('" + img + "')")
+		.service__content
+			.service__subtitle
+				.service__name.h3=name
+				.service__price
+					.service__price-icon
+					.service__price-count!= От #{price} ₽
+			.service__data
+				ul
+					each li in data
+						li=li
+			.service__control
+				a.service__btn.btn.--bg-blue.--lg(href="") Узнать подробнее
+				a.service__consult.link(href="") Записаться на консультацию
+

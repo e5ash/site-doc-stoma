@@ -1,0 +1,14 @@
+mixin ti(classes, img, name, text, position, desc, imgs)
+	.ti(class=classes)
+		.ti__img
+			+img('')
+		.ti__content
+			.ti__name
+			.ti__text
+			.ti__data.row
+				.ti__position
+				.ti__desc
+			.ti__imgs
+				.ti__imgs-item(data-fancybox="" data-src="" style="background-image: url('')")
+				.ti__imgs-item(data-fancybox="" data-src="" style="background-image: url('')")
+				.ti__imgs-item(data-fancybox="" data-src="" style="background-image: url('')")
