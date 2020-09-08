@@ -1,0 +1,26 @@
+extend ../templates/main
+append top
+	- var title = "Контакты"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html'
+			],
+			[
+				'Акции'
+			]
+		]
+
+	.page.bg-gray
+		.case
+			+breadcrumbs('page__bredcrumbs bredcrumbs', breadcrumbs)
+		.page__title.h2 Контакты стоматологии Доктор Стом
+
+
+	include ../parts/map
+
+	- var orderTitle = 'Запишитесь <br>на консультацию <br>к глав.врачу сейчас'
+	include ../parts/order

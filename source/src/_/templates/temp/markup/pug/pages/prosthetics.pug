@@ -1,0 +1,49 @@
+extend ../templates/main
+append top
+	- var title = ""
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				''
+			]
+		]
+
+	- 
+		var _hello = {
+			img     : 'upload/bgs/bg-hello-prosthetics.jpg',
+			title   : 'Протезирование зубов <br>в Санкт-Петербурге',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Изготовление <br>конструкций от 1 дня',
+					'stopwatch.png',
+					'stopwatch'
+				],
+				[
+					'100% безболезненность <br>лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Максимальная натуральность <br>и естественность зубов.',
+					'smile.png',
+					'smile'
+				]
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		_hello.text,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)

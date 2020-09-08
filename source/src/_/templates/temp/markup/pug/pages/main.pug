@@ -1,53 +1,63 @@
 extend ../templates/main
 append top
-	- var title = ""
+	- var title = "Главная"
 
 append content
 	//- main
-	.hello.img(style="background-image: url('')")
-		.case
-			.hello__wrap
-				- 
-					var breadcrumbs = [
-						[
-							'main.html',
-							'Главная'
-						],
-						[
-							''
-						]
-					]
-				+breadcrumbs('hello__breadcrumbs breadcrumbs', breadcrumbs)
-				.hello__title.h2 Семейная #[br]стоматология #[br]в Санкт-Петербурге
-				.hello__subtitle.h3 Лечим детей и взрослых уже 10 лет
-				form.hello__form.form.row.i-bottom.--mlr-sm
-					.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-sm.--phone
-						label.input__title Ваш номер телефона:
-						.input__wrap
-							input.input__area(type="tel" name="phone" value="")
-							label.input__icon
-					button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-sm Записаться на консультацию
-				.hello__text
-				.hello__desc.desc
-					.desc__list.row
-						.desc__item
-							.desc__title 1000+ пациентов #[br]и отзывов
-							.desc__icon
-								+img('')
-						.desc__item
-							.desc__title 100% безболезненность #[br]лечения
-							.desc__icon
-								+img('')
-						.desc__item
-							.desc__title Проводим все виды #[br]стоматологического лечения
-							.desc__icon
-								+img('')
+	- 
+		var _hello = {
+			img        : 'upload/bgs/bg-hello-main.png',
+			title      : 'Семейная <br>стоматология <br>в Санкт-Петербурге',
+			subtitle   : 'Лечим детей и взрослых уже 10 лет',
+			desc       : [
+				[
+					'1000+ пациентов <br>и отзывов',
+					'2-gis-stars.png',
+					'2-gis-stars'
+				],
+				[
+					'100% безболезненность <br>лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Проводим все виды <br>стоматологического лечения',
+					'smile.png',
+					'smile'
+				],
+			],
+			imgs       : [
+				'employees/employee-1.png',
+				'employees/employee-2.png',
+				'employees/employee-3.png',
+			],
+			imgsMode   : '--women'
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		_hello.subtitle, 
+		undefined,
+		_hello.desc, 
+		undefined,
+		_hello.imgs,
+		_hello.imgsMode
+		)
 
+	include ../parts/services
+	include ../parts/reviews
+	include ../parts/rating
+	
+	- var whyList = [0,1,2,3,4,5,6,7,8]
+	include ../parts/why
+				
+	include ../parts/transparency
 
-				.hello__img.--women
-					+img('')
-					+img('')
-					+img('')
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
 
+	include ../parts/clinic
+	include ../parts/certificates
+	include ../parts/questions
 
 	

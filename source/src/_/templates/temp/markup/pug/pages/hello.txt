@@ -1,0 +1,11 @@
+- 
+		var _hello = {
+			img        : '',
+			title      : '',
+			subtitle   : '',
+			text       : '',
+			desc       : '',
+			breadcrumbs: '',
+			imgs       : '',
+			imgsMode   : ''
+		}

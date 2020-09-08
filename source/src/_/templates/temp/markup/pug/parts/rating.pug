@@ -1,0 +1,48 @@
+.rating
+	.case
+		.rating__head.row.i-mid
+			.rating__data
+				.rating__title.h2 4,3+ рейтинг
+				.rating__subtitle.h3 на независимых порталах
+			.rating__desc.c-gray Нажмите на кнопку, чтобы #[br]перейти на портал и прочитать #[br]все отзывы
+
+		.rating__body
+			.rating__list
+				-
+					var ratings = [
+						[
+							'logo-yell-ru.png',
+							'Оценка: 5',
+							[
+								'review-yell-1.jpg',
+								'review-yell-2.jpg'
+							]
+						],
+						[
+							'logo-yandex-otzivi.png',
+							'Оценка: 4,3',
+							[
+								'review-yo-1.jpg',
+								'review-yo-2.jpg'
+							]
+						],
+						[
+							'logo-zoon.png',
+							'Оценка: 4,8',
+							[
+								'review-zoon-1.jpg',
+								'review-zoon-2.jpg'
+							]
+						],
+						[
+							'logo-2gis.png',
+							'Оценка: 5',
+							[
+								'review-2gis-1.jpg',
+								'review-2gis-2.jpg',
+								'review-2gis-3.jpg'
+							]
+						]
+					]
+				each rating in ratings
+					+ri(rating[0], rating[1], rating[2])

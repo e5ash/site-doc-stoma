@@ -1,0 +1,23 @@
+mixin problems(title, subtitle, list, quote, img, teamIndex)
+	.problems.bg-gray
+		.case
+			.problems__title.h2.tac!= title
+			.problems__subtitle.h3.tac!= subtitle
+			.problems__wrap.row
+				.problems__list
+					each listItem in list
+						+problem(_problems[listItem][0], _problems[listItem][1], _problems[listItem][2])
+					
+						
+				.problems__content
+					.problems__quote!= quote
+					.problems__doctor.doctor
+						.doctor__img
+							+img(img)
+						.doctor__content
+							.doctor__name= _team[teamIndex][2]
+							.doctor__text= _team[teamIndex][3]
+							.doctor__desc
+								+icon('time-gray')
+								span= "Стаж: " + _team[teamIndex][4]
+							a.doctor__btn.btn.--bg-blue.--lg() Записаться на срочный прием

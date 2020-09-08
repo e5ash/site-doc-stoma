@@ -1,0 +1,13 @@
+.kid-doc
+	.case
+		.kid-doc__wrap.row
+			.kid-doc__content
+				.kid-doc__title.h2 Лечение вашего ребёнка будет осуществлять детский стоматолог
+				.kid-doc__text.text
+					ul.--icon
+						li Все врачи проходят обучение у ведущих специалистов России и мира, что позволяет внедрять в практику самые современные и безопасные методики стоматологического лечения.
+						li Только опытные врачи: стаж работы от 10 лет
+				a.kid-doc__btn.btn.--bg-blue.--lg(href="") Посмотреть всех врачей
+			- var index = 1;
+			+ti('team__item', _team[index][0], _team[index][1], _team[index][2], _team[index][3], _team[index][4])
+			- i++

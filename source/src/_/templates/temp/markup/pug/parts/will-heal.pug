@@ -1,0 +1,16 @@
+.will-heal
+	.case
+		.will-heal__wrap.row
+			.will-heal__content
+				.will-heal__title.h2!=willHealTitle
+				.will-heal__subtitle.h3 лучшие врачи клиники
+				.will-heal__text
+					ul.--icon
+						li Только опытные врачи: стаж  #[br]работы от 10 лет
+						li Все врачи проходят обучение у ведущих #[br]специалистов России и мира, что позволяет внедрять #[br]в практику самые современные и безопасные #[br]методики стоматологического лечения.
+				a.will-heal__more.btn.--bg-blue.--lg(href="") Посмотреть всех врачей
+			.will-heal__list.arrows.--gray
+				- var i = 0;
+				each teamItem in _team
+					+ti('will-heal__item', _team[i][0], _team[i][1], _team[i][2], _team[i][3], _team[i][4])
+					- i++

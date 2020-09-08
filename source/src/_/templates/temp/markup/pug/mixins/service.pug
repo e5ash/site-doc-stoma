@@ -8,9 +8,10 @@ mixin service(name, price, img, data)
 					.service__price-icon
 					.service__price-count От #{price} ₽
 			.service__data
-				ul
-					each li in data
-						li=li
+				if data
+					ul
+						each dataLi in data
+							li=dataLi
 			.service__control
 				a.service__btn.btn.--bg-blue.--lg(href="") Узнать подробнее
 				a.service__consult.link(href="") Записаться на консультацию

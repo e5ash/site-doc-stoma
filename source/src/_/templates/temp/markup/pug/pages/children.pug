@@ -1,0 +1,97 @@
+extend ../templates/main
+append top
+	- var title = "Детская стоматология"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				'Детская стоматология'
+			]
+		]
+
+	- 
+		var _hello = {
+			img    : 'upload/bgs/bg-hello-children.jpg',
+			title   : 'Детская стоматология <br>в Санкт-Петербурге',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Индивидуальный подход <br>к каждому ребёнку',
+					'heart.png',
+					'heart'
+				],
+				[
+					'100% безболезненность <br>лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Приём ведёт <br>профильный врач',
+					'woman.png',
+					'woman'
+				],
+				[
+					'Объясняем в игровой форме, <br>для чего и зачем нужно лечить зубы',
+					'toys.png',
+					'toys'
+				],
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		_hello.text,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)
+
+	include ../parts/terms
+	include ../parts/help
+	
+	.price-block.bg-gray
+		.case
+			.price-block__title.h2.tac Наши цены на лечение детских зубов
+			.price-block__list
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+			+now('price-list__now now', 'employee/employee-2.png')
+
+	- var orderTitle = 'Не знаете какой <br>у вас диагноз?'
+	include ../parts/transparency
+	include ../parts/order
+	include ../parts/kid-doc
+	include ../parts/reviews
+	include ../parts/questions

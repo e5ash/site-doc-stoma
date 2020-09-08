@@ -1,2 +1,3 @@
 mixin img(src)
-	img(src=src, alt="")
+	if src
+		img(src="upload/" + src, alt="")

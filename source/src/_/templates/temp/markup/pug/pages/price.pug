@@ -1,0 +1,64 @@
+extend ../templates/main
+append top
+	- var title = "Цены"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html'
+			],
+			[
+				'Цены'
+			]
+		]
+	- 
+		var _hello = {
+			img        : 'upload/bgs/bg-hello-pricelist.jpg',
+			title      : 'Цены <br>в стоматологии <br>Доктор Стом',
+			subtitle   : '',
+			desc       : [
+				[
+					'Гарантия 2 года <br>на пломбы',
+					'syringes-x2.png',
+					'syringes'
+				],
+				[
+					'Гарантия 5 лет <br>имплантацию',
+					'docs.png',
+					'sheild'
+				],
+				[
+					'Срок службы <br>от 10 лет',
+					'stopwatch.png',
+					'stopwatch'
+				],
+			],
+			list: [
+				[
+					'checklist.png',
+					'Цены под ключ: финальная стоимость озвучивается сразу на приёме'
+				],
+				[
+					'card-r.png',
+					'Без скрытых платежей: 100% совпадение цен на сайте и в клинике'
+				]
+			]
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		undefined,
+		_hello.desc, 
+		breadcrumbs,
+		undefined, 
+		undefined,
+		_hello.list,
+		false
+		)
+	include ../parts/price-list
+
+	include ../parts/transparency
+	include ../parts/order

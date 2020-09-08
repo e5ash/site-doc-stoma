@@ -503,11 +503,12 @@ append content
 							a.portfolio__btn.btn.--bg-blue.--lg()
 						.portfolio__imgs
 							.portfolio__img-wrap
-								.portfolio__img(style="background-image: url('')")
+								.portfolio__img(style="background-image: url('upload/portfolio/portfolio-1-1.jpg')")
 							.portfolio__img-wrap
-								.portfolio__img.--blur(style="background-image: url('')")
+								.portfolio__img.--blur(style="background-image: url('upload/portfolio/portfolio-1-1.jpg')")
 								.portfolio__show.show
 									.show__icon
+										+icon('click')
 									.show__title
 
 	.process.bg-blue
@@ -868,6 +869,7 @@ append content
 				.map__area
 					#map
 
+	
 	.about
 		.case
 			.about__wrap.row

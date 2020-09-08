@@ -1,0 +1,17 @@
+mixin process(title, list)
+	.process.bg-blue
+		.case
+			.process__title.h2.tac.c-white!= title
+			.process__list
+				- var i = 1
+				each item in list
+					.process__item
+						.process__img(style="background-image: url('upload/process/"+ _process[item][0] +"')")
+						.process__content
+							.process__head
+								.process__count= "Этап №" + i
+								.process__name.h3!=_process[item][1]
+							.process__body.text=_process[item][2]
+							if i == list.length
+								a.process__btn.btn.--bg-blue.--lg() Записаться на консультацию
+					- i++

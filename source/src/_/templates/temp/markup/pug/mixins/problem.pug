@@ -1,4 +1,9 @@
-mixin problem(name, img)
+mixin problem(img, text, title)
 	.problems__item
-		.problems__img.img(style="background-image: url('" + img + "')")
-		.problems__name=name
+		.problems__img.img(style="background-image: url('upload/problems/" + img + "')")
+		.problems__content
+			if title
+				.problems__title!=title
+				.problems__text!=text
+			else
+				.problems__name!=text

@@ -1,3 +1,7 @@
+@import url(../../libs/slick-carousel/slick/slick.css);
+@import url(../../libs/fancybox/dist/jquery.fancybox.css);
+@import url("../../fonts/Circe/stylesheet.css");
+@import url("../../fonts/IgraSans/stylesheet.css");
 *, :before, :after {
   padding: 0;
   margin: 0;
@@ -7,8 +11,8 @@
 
 body {
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
-  color: #000;
+  font-family: "Circe", sans-serif;
+  color: #141414;
   background: white; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,7 +38,7 @@ li {
   list-style-image: none; }
 
 a {
-  color: #000;
+  color: #141414;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   -webkit-transition: .3s;

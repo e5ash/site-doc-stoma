@@ -1,0 +1,101 @@
+extend ../templates/main
+append top
+	- var title = "Исправление прикуса"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				'Исправление прикуса'
+			]
+		]
+	- 
+		var _hello = {
+			img     : 'upload/bgs/bg-hello-bite-correction.jpg',
+			title   : 'Исправление прикуса <br>в Санкт-Петербурге',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Гарантия 5 лет по договору. <br>Срок службы от 15 лет.',
+					'docs.png',
+					'docs'
+				],
+				[
+					'100% безболезненность <br>лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Подбор брекет-системы <br>индивидуально под пациента',
+					'braces.png',
+					'braces'
+				]
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		_hello.text,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)
+
+	+problems('Показания к установке брекет-систем', 'Мы можем предложить установку брекет-систем пациенту со следующими <br>патологиями и дефектами зубного ряда:', [4,5,6,7,8], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employee-8.png', 4)
+
+	
+	include ../parts/braces
+
+	- var orderTitle = 'Правильный выбор <br>брекет-систем'
+	- var orderSubtitle = 'Правильный выбор <br>брекет-систем'
+	include ../parts/order
+
+	.price-block.bg-gray
+		.case
+			.price-block__title.h2.tac Наши цены на лечение детских зубов
+			.price-block__list
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+			+now('price-list__now now', 'employee/employee-2.png')
+
+
+	include ../parts/transparency
+	include ../parts/portfolio
+
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
+
+	include ../parts/reviews
+	include ../parts/questions
+

@@ -1,0 +1,30 @@
+extend ../templates/main
+append top
+	- var title = "Врачи"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html'
+			],
+			[
+				'Врачи'
+			]
+		]
+	.page.bg-gray
+		.case
+			+breadcrumbs('page__bredcrumbs bredcrumbs', breadcrumbs)
+		.page__title.h2 Стоматологи клиники «Доктор Стом»
+		.page__wrap
+			include ../parts/we
+			include ../parts/team
+
+	include ../parts/qualification
+
+	- var whyList = [0,1,2,3,4,5,6,7,8]
+	include ../parts/why
+
+	include ../parts/certs
+	include ../parts/questions

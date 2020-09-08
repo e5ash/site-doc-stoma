@@ -1,0 +1,39 @@
+.order
+	.case
+		.order__wrap.row
+			.order__content
+				.order__title.h2!=orderTitle
+				.order__subtitle.h3!= orderSubtitle
+				if orderText != undfined
+					.order__text Оставьте контактные данные, в ближайшее время администратор свяжется с вами и запишет к главврачу
+				.order__form.i-bottom.--mlr-md
+					.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
+						label.input__title Ваше имя
+						.input__wrap
+							input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
+							label.input__icon
+								+icon('user')
+					.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+						label.input__title Ваш номер телефона:
+						.input__wrap
+							input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
+							label.input__icon
+								+icon('phone-gray')
+					button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
+					.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
+						input.checkbox__input(type="checkbox" name="policy" checked="checked")
+						label.checkbox__label Нажимая на кнопку, вы даете согласие #[br]на обработку своих персональных данных #[br]и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+					.form__item.form__desc
+						+icon('time-gray')
+						span Осталось 3 места на этой неделе
+			.order__persona.persona.--tatyana-ylkina
+				.persona__text
+					.persona__title Татьяна Улькина
+					.persona__desc Глав. врач клиники
+				.persona__img
+					- var img
+					if orderImg == undefined
+						- var img = 'employees/employee-1.png'
+					else 
+						- var img = orderImg
+					+img(img)

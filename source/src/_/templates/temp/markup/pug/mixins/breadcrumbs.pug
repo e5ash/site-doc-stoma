@@ -1,4 +1,4 @@
-mixin breadcrumbs(data, classes)
+mixin breadcrumbs(classes, data)
 	div(class=classes)
 		.case
 			if (data != undefinded)
@@ -8,6 +8,9 @@ mixin breadcrumbs(data, classes)
 						.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
 							if item[1] != undefinded
 								a.breadcrumbs__link(href=item[1] itemprop="item")
+									if position == 1
+										span.breadcrumbs__icon
+											+icon('house')
 									span.breadcrumbs__name(itemprop="name")= item[0]
 							else
 								.breadcrumbs__text(itemprop="item")

@@ -1,0 +1,111 @@
+extend ../templates/main
+append top
+	- var title = "Протезирование"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				'Протезирование'
+			]
+		]
+
+	- 
+		var _hello = {
+			img     : 'upload/bgs/bg-hello-theatment.jpg',
+			title   : 'Лечение зубов <br>без боли с гарантией <br>результата',
+			subtitle: 'в Санкт-Петербурге',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Современные и самые качественные пломбировочные материалы',
+					'syringes.png',
+					'syringes'
+				],
+				[
+					'100% безболезненность лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Спасение, а не замена зуба – наш приоритет',
+					'dent.png',
+					'dent'
+				]
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		_hello.subtitle, 
+		undefined,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)
+
+	+problems('Некоторые из симптомов <br>заболевания зубов', undefined, [9, 10, 11, 12, 13, 14, 15], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employees/employee-1.png', 0)
+
+	- var whyList = [0,1,2,3,4,5,6,7,8]
+	include ../parts/why
+
+	- var orderTitle = 'Запишитесь <br>на консультацию <br>к глав.врачу сейчас'
+	- var orderImg = 'employees/employee-7.png'
+	include ../parts/order
+
+	- 
+		var price = [
+			[
+				'Лечение кариеса',
+				[
+					[
+						'Лечение кариеса',
+						'300 ₽'
+					],
+					[
+						'Лечение кариеса',
+						'300 ₽'
+					],
+					[
+						'Лечение кариеса',
+						'300 ₽'
+					],
+					[
+						'Лечение кариеса',
+						'300 ₽'
+					],
+				]
+			],
+			[
+				'Лечение пульпита',
+			],
+			[
+				'Лечение переодонтита',
+			]
+		]
+
+	- var priceTextTrue = true
+	- var nowImg        = 'employee/employee-4.png'
+	include ../parts/price-list
+
+	include ../parts/transparency
+
+	- var orderTitle = 'Не знаете какой <br>у вас диагноз?'
+	include ../parts/order
+
+	include ../parts/portfolio
+
+	+process('Как проходит процесс <br>лечения зубов', [0,5,6])
+
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
+	include ../parts/reviews
+	include ../parts/rating
+	include ../parts/clinic
+	include ../parts/questions
+

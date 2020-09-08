@@ -1,5 +1,5 @@
-mixin help-item(text, img)
+mixin help-item(img, text)
 	.help__item
 		.help__img
 			+img(img)
-		.help__text=text
+		.help__text!=text

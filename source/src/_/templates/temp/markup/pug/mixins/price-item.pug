@@ -1,0 +1,28 @@
+mixin price-item(id, name, data, text)
+	.price-list__item(id=id)
+		.price-list__head
+			.price-list__name=name
+			.price-list__icon
+		.price-list__body
+			.price-list__wrap.row
+				if data
+					.price-list__data
+						ul
+							each dataItem in data
+								li
+									u= dataItem[0]
+									strong=dataItem[1]
+				if priceText
+					.price-list__text.text
+						h3
+						ul
+							li Сбор анамнеза
+							li Осмотр рот полости, рентген снимок
+							li Фото протокол
+							li Составление плана лечения
+							li Аппликационная анастезия, основная анестезияНаложение коффердама
+							li Обработка кариеса механическая и медикаментозная
+							li Внесение моделировка поверхностей пломбировочным материалом
+							li Проверка контактов
+							li Шлифовка, полировка
+			+now('price-list__now now', nowImg)

@@ -1,0 +1,104 @@
+extend ../templates/main
+append top
+	- var title = "Установка виниров"
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				'Установка виниров'
+			]
+		]
+
+
+	- 
+		var _hello = {
+			img     : 'upload/bgs/bg-hello-veneers.jpg',
+			title   : 'Установка виниров <br>с гарантией результата',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Индивидуальный подбор цвета <br>виниров, согласно цвету кожи, <br>волос, глаз и пожеланиям пациента.',
+					'laptiop.png',
+					'laptiop'
+				],
+				[
+					'Натуральность <br>и естественность улыбки <br>по форме, цвету виниров.',
+					'veneer.png',
+					'veneer'
+				],
+				[
+					'Натуральность <br>и естественность улыбки <br>по форме, цвету виниров.',
+					'smile.png',
+					'smile'
+				],
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		_hello.text,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)
+
+	+problems('Проблемы, которые решают виниры', 'Мы можем предложить установку брекет-систем пациенту со следующими <br>патологиями и дефектами зубного ряда:', [0,1,2,3], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employee-1.png', 0)
+
+	include ../parts/types
+
+	.price-block.bg-gray
+		.case
+			.price-block__title.h2.tac Наши цены на установку виниров
+			.price-block__list
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+			+now('price-list__now now', 'employee/employee-2.png')
+
+	- var orderTitle = 'Не знаете какие вам <br>нужны виниры?'
+	include ../parts/order
+	include ../parts/transparency
+	include ../parts/portfolio
+
+	+process('Как проходит процесс установки <br>керамических виниров', [0,1,2,3,4])
+
+	- var whyList = [9, 2, 11, 6, 7, 0, 3, 1, 4]
+	include ../parts/why
+
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
+
+	include ../parts/reviews
+
+	include ../parts/questions

@@ -2,7 +2,7 @@ mixin ri(img, count, imgs)
 	.rating__item.ri
 		.ri__head
 			.ri__img
-				+img(img)
+				+img('logos/' + img)
 			.ri__count
 				.ri__count-wrap
 				.ri__count-title=count
@@ -11,4 +11,4 @@ mixin ri(img, count, imgs)
 			.ri__list.row.--w2
 				each img in imgs
 					.ri__item
-						+img(img)
+						+img('reviews/' + img)

@@ -1,0 +1,42 @@
+mixin hello(img, title, subtitle, text, desc, breadcrumbs, imgs, imgsMode, list, form)
+	.hello.img(style="background-image: url('"+ img +"')")
+		.case
+			.hello__wrap
+				if breadcrumbs
+					+breadcrumbs('hello__breadcrumbs breadcrumbs', breadcrumbs)
+				if title
+					.hello__title.h2!= title
+				if subtitle
+					.hello__subtitle.h3!= subtitle
+				if list
+					.hello__list
+						.hello__item
+							.hello__item-icon
+								+img(form[0])
+							.hello__item-title= form[1]
+				if form != false
+					form.hello__form.form.row.i-bottom.--mlr-sm
+						.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-sm.--phone
+							label.input__title Ваш номер телефона:
+							.input__wrap
+								input.input__area(type="tel" name="phone" value="")
+								label.input__icon
+						button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-sm Записаться на консультацию
+				if text
+					.hello__text= text
+				if desc
+					.hello__desc.desc
+						.desc__list.row
+							each descItem in desc
+								if descItem[2]
+									- var mode = '--' + descItem[2]
+								.desc__item(class=mode)
+									.desc__title!= descItem[0]
+									.desc__icon
+										+img(descItem[1])
+
+
+				if imgs
+					.hello__img(class=imgsMode)
+						each imgsItem in imgs
+							+img(imgsItem)

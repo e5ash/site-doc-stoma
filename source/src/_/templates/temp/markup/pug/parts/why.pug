@@ -1,0 +1,9 @@
+.why
+	.case
+		.why__title.h2.tac Почему к нам приходят
+		.why__subtitle.h3.tac 90% пациентов по рекомендациям
+		.why__list.row
+			mixin whyItem(index)
+				+why-item(_why[index][0], _why[index][1], _why[index][2])
+			each index in whyList
+				+whyItem(index)

@@ -1,0 +1,72 @@
+extend ../templates/main
+append top
+	- var title = ""
+
+append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				''
+			]
+		]
+
+
+	- 
+		var _hello = {
+			img     : 'upload/bgs/bg-hello-implantation.jpg',
+			title   : 'Имплантация зубов <br>в Санкт-Петербурге',
+			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
+			desc    : [
+				[
+					'Гарантия 5 лет по договору. <br>Срок службы от 15 лет.',
+					'docs.png',
+					'docs'
+				],
+				[
+					'100% безболезненность <br>лечения',
+					'sheild.png',
+					'sheild'
+				],
+				[
+					'Приживаемость <br>импланта 100%',
+					'implant.png',
+					'implant'
+				]
+			],
+		}
+	+hello(
+		_hello.img, 
+		_hello.title, 
+		undefined, 
+		_hello.text,
+		_hello.desc, 
+		breadcrumbs,
+		undefined,
+		undefined
+		)
+
+	include ../parts/types
+
+	include ../parts/implants
+
+	include ../parts/full
+
+	include ../parts/solutions
+
+	include ../parts/implant
+
+	include ../parts/portfolio
+
+	- var whyList = [0,1,2,3,4,5,6,7,8]
+	include ../parts/why
+
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
+
+	include ../parts/reviews
+
+	include ../parts/questions

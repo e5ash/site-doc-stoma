@@ -1,0 +1,36 @@
+.map
+	.case
+		.map__wrap
+			.map__block
+				.map__img
+					+img('building.jpg')
+				.map__list
+					.map__item
+						.map__name Адрес:
+						.map__text
+							p 
+								+icon('placeholder-blue')
+								span м. Международная ул.Турку, д.13, корп.1
+					.map__item
+						.map__name
+						.map__text
+							p 
+								+icon('time-blue')
+								span с Понедельника по Субботу #[br]c 10:00 до 21:00
+					.map__item
+						.map__name
+						.map__text
+							p.--line
+								+icon('phone-blue')
+								a(href="tel:+7 (812) 111-11-11") +7 (812) 111-11-11
+							p.--line
+								+icon('at-blue')
+								a(href="mailto:mail@mail.ru") mail@mail.ru
+					.map__item
+						.map__name Как пройти:
+						.map__text
+							p После выхода из метро поверните направо. Перейдите на другую сторону Бухарестской улицы и идите направо до ул Турку в сторону проспектаСлавы. Ориентир два красно-белых высоких здания. На Пересечении ул. Турку и Бухарестской улицы заворачивайте во двор мимо детской площадки. В левом здании в углу находится клиника.
+							p Продолжительность пути: 900 метров и пешком идти примерно 10 минут.
+				a.map__btn.btn.--bg-blue.--md() Построить маршрут
+			.map__area
+				#map

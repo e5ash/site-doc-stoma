@@ -1,0 +1,17 @@
+mixin now(classes, img)
+	div(class=classes)
+		.now__img
+			+img(img)
+		.now__content
+			.now__title
+			.now__text
+			.now__form.form.row.i-bottom.--mlr-md
+				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+					label.input__title
+					.input__wrap
+						input.input__area(type="tel" name="phone" value="")
+						label.input__icon
+				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
+				.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
+					input.checkbox__input(type="checkbox" name="policy" checked="checked")
+					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].

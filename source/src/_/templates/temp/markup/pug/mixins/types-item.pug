@@ -2,13 +2,19 @@ mixin types-item(img, name, desc, text, data)
 	.types__item
 		.types__img.img(style="background-image: url('" + img + "')")
 		.types__content
-			.types__name=name
-			.types__desc=desc
-			.types__text=text
+			.types__name!=name
+			.types__desc!=desc
+			.types__text!=text
 			.types__data
 				ul
 					each item in data
 						li
 							u=item[0]
-							strong=item[1]
-			a.types__btn.btn.--bg-blue.--lg()
+							strong
+								if item[1] == 'check'
+									+icon('check')
+								else if item[1] == 'cross'
+									+icon('cross')
+								else
+									=item[1]
+			a.types__btn.btn.--bg-blue.--lg() Записаться на консультацию
