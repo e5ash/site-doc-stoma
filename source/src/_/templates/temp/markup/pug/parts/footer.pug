@@ -70,26 +70,55 @@ footer.footer
 					.dev__title Разработка и продвижение сайта
 
 
-.popup.--lg.bg-gray#popup-
+.popup.--lg.bg-gray#popup-consult
 	.popup__close
 	.popup__wrap.row
 		.popup__content
-			.popup__title.h2
-			.popup__subtitle.h4
+			.popup__title.h2 Запишитесь #[br]на консультацию
+			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут, подберёт удобное время #[br]для консультации врача и ответит на все вопросы
 			.popup__form.form
 				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
-					label.input__title
+					label.input__title Ваше имя
 					.input__wrap
-						input.input__area(type="text" name="name" value="")
+						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 						label.input__icon
+							+icon('user')
 				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
-					label.input__title
+					label.input__title Ваш номер телефона:
 					.input__wrap
-						input.input__area(type="tel" name="phone" value="")
+						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
 						label.input__icon
-				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md
+							+icon('phone-gray')
+				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md Записаться на консультацию
 				.form__item.form__checkbox.checkbox.check.--lg.--mlr-md
 					input.checkbox__input(type="checkbox" name="policy" checked="checked")
 					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
 		.popup__img
-			+img('')
+			+img('employees/employee-4.png')
+
+
+.popup.--lg.bg-gray#popup-callback
+	.popup__close
+	.popup__wrap.row
+		.popup__content
+			.popup__title.h2 Закажите #[br]бесплатный звонок
+			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут и ответит на все вопросы
+			.popup__form.form
+				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
+					label.input__title Ваше имя
+					.input__wrap
+						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
+						label.input__icon
+							+icon('user')
+				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+					label.input__title Ваш номер телефона:
+					.input__wrap
+						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
+						label.input__icon
+							+icon('phone-gray')
+				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md Заказать бесплатный звонок
+				.form__item.form__checkbox.checkbox.check.--lg.--mlr-md
+					input.checkbox__input(type="checkbox" name="policy" checked="checked")
+					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+		.popup__img
+			+img('phone-hand.png')

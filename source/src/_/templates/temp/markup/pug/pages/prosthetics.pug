@@ -1,6 +1,6 @@
 extend ../templates/main
 append top
-	- var title = ""
+	- var title = "Протезирование зубов"
 
 append content
 	- 
@@ -10,7 +10,7 @@ append content
 				'main.html',
 			],
 			[
-				''
+				'Протезирование зубов'
 			]
 		]
 
@@ -47,3 +47,58 @@ append content
 		undefined,
 		undefined
 		)
+
+
+	include ../parts/do
+	
+
+	- var orderTitle = 'Правильный выбор <br>протезирования'
+	- var orderSubtitle = 'возможен только после диагностики'
+	include ../parts/order
+
+	.price-block.bg-gray
+		.case
+			.price-block__title.h2.tac Наши цены на протезирование зубов
+			.price-block__list
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+
+				.price-block__item
+					.price-block__head.row
+						.price-block__name Циркониевые коронки
+						.price-block__count 300 ₽
+					.price-block__body
+						.price-block__subtitle В цену входят:
+						.price-block__data
+							ul
+								li Анестезия
+								li Обработка зуба
+								li Снятие оттисков
+								li Изготовление временной коронки
+								li Фиксация постоянной корон
+			+now('price-list__now now', 'employee/employee-2.png')
+
+	- var whyList = [0,1,2,3,4,5,6,7,8]
+	include ../parts/why
+
+	include ../parts/portfolio
+
+	include ../parts/transparency
+
+	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	include ../parts/will-heal
+
+	include ../parts/reviews
+
+	include ../parts/questions

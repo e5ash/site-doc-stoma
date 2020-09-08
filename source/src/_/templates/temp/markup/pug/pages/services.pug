@@ -1,0 +1,23 @@
+extend ../templates/main
+append top
+	- var title = "Услуги"
+
+append content
+	//- main
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html'
+			],
+			[
+				'Услуги'
+			]
+		]
+	.page.bg-gray
+		.case
+			+breadcrumbs('page__bredcrumbs bredcrumbs', breadcrumbs)
+		.page__title.h2 Услуги
+
+	include ../parts/services
+	include ../parts/questions

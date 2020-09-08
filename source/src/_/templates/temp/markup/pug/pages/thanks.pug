@@ -3,3 +3,29 @@ append top
 	- var title = ""
 
 append content
+	.thanks.img(style="background-image: url('upload/bgs/bg-hello-thanks.jpg')")
+		.case
+			.thanks__wrap.row
+				.thanks__content
+					.thanks__title.h2 Отлично! Мы уже #[br]получили вашу заявку!
+					.thanks__subtitle.h3 Я свяжусь с вами в течение рабочего дня  #[br]с 10:00 до 21:00 по МСК, чтобы ответить на все  #[br]вопросы и записать на консультацию
+					.thanks__write.write
+						.write__title Уже есть вопросы? 
+						.write__desc Напишите нам. Среднее время ответа: 15 минут 
+						.write__wrap
+							.write__list
+								a.write__item.--whatsapp(href="" target="_blank")
+									.write__item-title WhatsApp
+									.write__item-icon
+										+icon('whatsapp')
+								a.write__item.--telegram(href="" target="_blank")
+									.write__item-title Telegram
+									.write__item-icon
+										+icon('telegram')
+
+				.thanks__persona.persona.--admin
+					.persona__text
+						.persona__title Имя Фамилия
+						.persona__desc Администратор #[br]клиники
+					.persona__img
+						+img('employees/employee-4.png')
