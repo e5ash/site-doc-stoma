@@ -1,17 +1,19 @@
 mixin now(classes, img)
 	div(class=classes)
-		.now__img
-			+img(img)
-		.now__content
-			.now__title
-			.now__text
-			.now__form.form.row.i-bottom.--mlr-md
-				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
-					label.input__title
-					.input__wrap
-						input.input__area(type="tel" name="phone" value="")
-						label.input__icon
-				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
-				.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
-					input.checkbox__input(type="checkbox" name="policy" checked="checked")
-					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+		.now__wrap
+			.now__img
+				+img(img)
+			.now__content
+				.now__title.h3 Запишитесь на консультацию прямо сейчас
+				.now__text.h4 Мы проведём диагностику, ответим на все вопросы, составим план #[br]и рассчитаем стоимость лечения
+				.now__form.form.row.i-bottom.--mlr-md
+					.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone
+						label.input__title Ваш номер телефона:
+						.input__wrap
+							input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
+							label.input__icon
+								+icon('phone-gray')
+					button.form__item.form__btn.btn.--bg-blue.--shadow-blue.--lg.--w-md.--mlr-md Записаться на консультацию
+					.form__item.form__checkbox.checkbox.check.--sm.--w-lg.--mlr-md
+						input.checkbox__input(type="checkbox" name="policy" checked="checked")
+						label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[br]#[a(href="upload/policy.pdf") с политикой конфиденциальности].

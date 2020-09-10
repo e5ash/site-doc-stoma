@@ -7,27 +7,27 @@
 						li
 							a(href="#price-list-item-all") Все услуги
 						li
-							a(href="#price-list-item-2") Диагностика и консультация  
+							a(href="#price-list-item-1") Диагностика и консультация  
 						li
-							a(href="#price-list-item-3") Отбеливание
+							a(href="#price-list-item-2") Отбеливание
 						li
-							a(href="#price-list-item-4") Чистка
+							a(href="#price-list-item-3") Чистка
 						li
-							a(href="#price-list-item-5") Имплантация
+							a(href="#price-list-item-4") Имплантация
 						li
-							a(href="#price-list-item-6") Ортопедия
+							a(href="#price-list-item-5") Ортопедия
 						li
-							a(href="#price-list-item-7") Хирургия
+							a(href="#price-list-item-6") Хирургия
 						li
-							a(href="#price-list-item-8") Костная пластика
+							a(href="#price-list-item-7") Костная пластика
 						li
-							a(href="#price-list-item-9") Пародонтология
+							a(href="#price-list-item-8") Пародонтология
 						li
-							a(href="#price-list-item-10") Ортодонтия
+							a(href="#price-list-item-9") Ортодонтия
 						li
-							a(href="#price-list-item-11") Детская стоматология
+							a(href="#price-list-item-10") Детская стоматология
 
-			.price-list__list
+			.price-list__list.tabs-list#price-list
 				- var i = 1
 				- var parsePrice
 				if price != undefined
@@ -36,6 +36,7 @@
 					- var parsePrice = _prices
 				each priceItem in parsePrice
 					+price-item(i, priceItem[0], _prices[0][1])
+					- i++
 
 
 	

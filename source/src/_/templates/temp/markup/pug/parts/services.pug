@@ -1,9 +1,10 @@
-.services.bg-gray
+.services.bg-gray(class=servicesClass)
 	.case
-		.services__head
-			.services__name
-				+img('services-title-icon.png')
-			.services__title.h2 Услуги стоматологии #[br]в Санкт-Петербурге
+		if servicesHead == true
+			.services__head.row.i-mid
+				.services__name
+					+img('services-title-icon.png')
+				.services__title.h2 Услуги стоматологии #[br]в Санкт-Петербурге
 		.services__body
 			.services__list
 				- 
@@ -12,6 +13,7 @@
 							'Лечение ﻿зубов', 
 							'3 000',
 							'upload/services/services-1.png',
+							'http://localhost:3000/treatment.html',
 							[
 								'Лечение кариеса',
 								'Лечение пульпита',
@@ -22,6 +24,7 @@
 							'Протезирование ﻿зубов', 
 							'3 000',
 							'upload/services/services-2.png',
+							'http://localhost:3000/prosthetics.html',
 							[
 								'Виниры, ультраниры',
 								'Коронки',
@@ -33,6 +36,7 @@
 							'Имплантация ﻿зубов', 
 							'3 000',
 							'upload/services/services-3.png',
+							'http://localhost:3000/implantation.html',
 							[
 								'Установка имплантов',
 								'Костная пластика',
@@ -43,6 +47,7 @@
 							'Эстетическая стоматология', 
 							'3 000',
 							'upload/services/services-4.png',
+							'http://localhost:3000/veneers.html',
 							[
 								'Установка виниров, ультраниров',
 								'Прямая реставрация',
@@ -53,11 +58,13 @@
 							'Детская стоматология', 
 							'3 000',
 							'upload/services/services-5.png',
+							'http://localhost:3000/children.html',
 						],
 						[
 							'Ортодонтия', 
 							'3 000',
 							'upload/services/services-6.png',
+							'http://localhost:3000/bite-correction.html',
 							[
 								'Лечение сустава (гнатология)',
 								'Выравнивание зубов',
@@ -69,6 +76,7 @@
 							'Хирургия', 
 							'3 000',
 							'upload/services/services-7.png',
+							'http://localhost:3000/implantation.html',
 							[
 								'Удаление зубов',
 								'Апикальная хирургия (удаление «кисты» и сохраняем зуб)',
@@ -76,4 +84,4 @@
 						]
 					]
 				each service in services
-					+service(service[0], service[1], service[2], service[3])
+					+service(service[0], service[1], service[2], service[3], service[4])

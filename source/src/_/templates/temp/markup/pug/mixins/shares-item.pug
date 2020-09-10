@@ -2,16 +2,16 @@ mixin shares-item(name, text, img, toltip1, toltip2)
 	.shares__item
 		.shares__img(style="background-image: url('"+ img +"')")
 		.shares__content
-			.shares__name=name
+			.shares__name.h4=name
 			.shares__more.more-text
 				.more-text__item
-					.more-text__title Срок акции
+					.more-text__title #[span Срок акции]
 					.more-text__toltip.toltip
 						.toltip__title Срок акции
 						.toltip__text=toltip1
 				.more-text__item
-					.more-text__title УСЛОВИЯ
+					.more-text__title #[span Условия]
 					.more-text__toltip.toltip
 						.toltip__title УСЛОВИЯ
 						.toltip__text=toltip2
-			a.shares__btn.btn.--bg-blue.--lg(href="")
+			a.shares__btn.btn.--bg-blue.--shadow-blue.--lg(href="") Узнать подробнее

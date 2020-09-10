@@ -1,9 +1,13 @@
-.certificates
+if certificatesBgGray == true
+	- var certificatesClass = 'bg-gray'
+.certificates(class=certificatesClass)
 	.case
-		.certificates__wrap
+		.certificates__wrap.row.i-mid
 			.certificates__list
-				.certificates__item.img(style="background-image: url('upload/certificates/certificate-1.jpg')")
-				.certificates__item.img(style="background-image: url('upload/certificates/certificate-2.jpg')")
+				.certificates__item.img(data-src="upload/certificates/certificate-1.jpg" data-fancybox="" style="background-image: url('upload/certificates/certificate-1.jpg')")
+				.certificates__item.img(data-src="upload/certificates/certificate-2.jpg" data-fancybox="" style="background-image: url('upload/certificates/certificate-2.jpg')")
+				.certificates__item.img(data-src="upload/certificates/certificate-1.jpg" data-fancybox="" style="background-image: url('upload/certificates/certificate-1.jpg')")
+				.certificates__item.img(data-src="upload/certificates/certificate-2.jpg" data-fancybox="" style="background-image: url('upload/certificates/certificate-2.jpg')")
 
 			.certificates__content
 				.certificates__title.h2 Наши лицензии #[br]и сертификаты
@@ -13,4 +17,4 @@
 					p #[strong КПП:] 781601001
 					p #[strong Юр. адрес:] г. Санкт-Петербург, ул.Турку #[br]д. 13 корп.1 лит.А пом. 17Н
 					p Лицензия №11-11-11 от 23.09.2019
-				.certificates__arrows.arrows.--gray
+				.certificates__chevrons.chevrons.--gray.--sm

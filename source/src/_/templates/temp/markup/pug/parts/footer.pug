@@ -7,39 +7,41 @@ footer.footer
 					ul
 						li
 							a(href="") Цены
- 
 						li
 							a(href="") Отзывы
+					ul
 						li
 							a(href="") О клинике
-
 						li
 							a(href="") Контакты
+					ul
 						li
 							a(href="") Врачи
-
 						li
 							a(href="") Работы
+					ul
 						li
 							a(href="") Лечение зубов
 						li
 							a(href="") Протезирование зубов
+					ul
 						li
 							a(href="") Имплантация
 						li
 							a(href="") Детская стоматология
+					ul
 						li
 							a(href="") Ортодонтия
 				.footer__socials.socials
 					ul
 						li
-							a(href="")
+							a(href="" target="_blank")
 								+icon('facebook')
 						li
-							a(href="")
+							a(href="" target="_blank")
 								+icon('instagram')
 						li
-							a(href="")
+							a(href="" target="_blank")
 								+icon('vk')
 	.footer__bottom
 		.case
@@ -64,60 +66,62 @@ footer.footer
 				.footer__contacts
 					p ﻿Юр. адрес: г. Санкт-Петербург, #[br]ул.Турку д.13 корп.1 лит.А пом. 17Н #[br]Лицензия №11-11-11 от 23.09.2019
 
-				a.footer__dev.dev(href="")
+				a.footer__dev.dev(href="https://polovinkin.pro/" target="_blank")
 					.dev__img
 						+img('polovinkin.png')
 					.dev__title Разработка и продвижение сайта
 
 
-.popup.--lg.bg-gray#popup-consult
-	.popup__close
+.popup.--lg#popup-consult
+	.popup__close(data-fancybox-close="")
+		+icon('x')
 	.popup__wrap.row
 		.popup__content
 			.popup__title.h2 Запишитесь #[br]на консультацию
 			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут, подберёт удобное время #[br]для консультации врача и ответит на все вопросы
-			.popup__form.form
-				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
+			.popup__form.form.row.i-bottom.--mlr-md
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--name
 					label.input__title Ваше имя
 					.input__wrap
 						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 						label.input__icon
 							+icon('user')
-				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone
 					label.input__title Ваш номер телефона:
 					.input__wrap
 						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
 						label.input__icon
 							+icon('phone-gray')
-				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md Записаться на консультацию
-				.form__item.form__checkbox.checkbox.check.--lg.--mlr-md
+				button.form__item.form__btn.btn.--bg-blue.--shadow-blue.--lg.--w-md.--mlr-md Записаться на консультацию
+				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md
 					input.checkbox__input(type="checkbox" name="policy" checked="checked")
 					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
 		.popup__img
 			+img('employees/employee-4.png')
 
 
-.popup.--lg.bg-gray#popup-callback
-	.popup__close
+.popup.--lg#popup-callback
+	.popup__close(data-fancybox-close="")
+		+icon('x')
 	.popup__wrap.row
 		.popup__content
 			.popup__title.h2 Закажите #[br]бесплатный звонок
 			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут и ответит на все вопросы
-			.popup__form.form
-				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
+			.popup__form.form.row.i-bottom.--mlr-md
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--name
 					label.input__title Ваше имя
 					.input__wrap
 						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 						label.input__icon
 							+icon('user')
-				.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone
 					label.input__title Ваш номер телефона:
 					.input__wrap
 						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
 						label.input__icon
 							+icon('phone-gray')
-				button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md Заказать бесплатный звонок
-				.form__item.form__checkbox.checkbox.check.--lg.--mlr-md
+				button.form__item.form__btn.btn.--bg-blue.--shadow-blue.--lg.--w-md.--mlr-md Записаться на консультацию
+				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md
 					input.checkbox__input(type="checkbox" name="policy" checked="checked")
 					label.checkbox__label Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
 		.popup__img

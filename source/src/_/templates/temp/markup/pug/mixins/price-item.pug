@@ -1,7 +1,7 @@
 mixin price-item(id, name, data, text)
-	.price-list__item(id=id)
-		.price-list__head
-			.price-list__name=name
+	.price-list__item.tabs-item(id="price-list-item-" + id)
+		.price-list__head.row.i-mid
+			.price-list__name.h3=name
 			.price-list__icon
 		.price-list__body
 			.price-list__wrap.row

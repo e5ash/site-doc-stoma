@@ -1,5 +1,5 @@
 mixin problems(title, subtitle, list, quote, img, teamIndex)
-	.problems.bg-gray
+	.problems.bg-gray(style="background-image: url('upload/bgs/bg-problems-1.jpg')")
 		.case
 			.problems__title.h2.tac!= title
 			.problems__subtitle.h3.tac!= subtitle
@@ -10,7 +10,7 @@ mixin problems(title, subtitle, list, quote, img, teamIndex)
 					
 						
 				.problems__content
-					.problems__quote!= quote
+					.problems__quote.h3.tac!= quote
 					.problems__doctor.doctor
 						.doctor__img
 							+img(img)

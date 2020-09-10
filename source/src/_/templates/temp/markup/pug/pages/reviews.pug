@@ -14,7 +14,7 @@ append content
 			]
 		]
 
-	.feedback
+	.feedback.img(style="background-image: url('upload/bgs/bg-hello-reviews.jpg')")
 		.case
 			.feedback__wrap
 				+breadcrumbs('feedback__breadcrumbs breadcrumbs', breadcrumbs)
@@ -22,22 +22,26 @@ append content
 					.feedback__title.h2 Отзывы #[br]о стоматологии #[br]Доктор Стом
 					.feedback__content
 						.feedback__subtitle.h3 Данная страница создана для получения #[br]обратной связи от вас — наших пациентов. 
-						.feedback__text
+						.feedback__text.h4
 							p Лучшая награда для нас — искренние отзывы и счастливые #[br]здоровые улыбки пациентов. 
 							p Спасибо, что выбираете нас!
+				.feedback__img
+					+img('employees/employee-5.png')
 
-	- var reviewsList = false
+	- var reviewsList  = false
+	- var reviewsTitle = 'Видеоотзывы'
+	- var reviewsSubtitle = undefined
 	include ../parts/reviews
 
-	.rbook.bg-gray
+	.r-book.bg-gray
 		.case
-			.rbook__title.h2.tac Книга отзывов
-			.rbook__subtitle.h3.tac Естественно, у нас в стоматологии есть книга отзывов и предложений. #[br]Приходите и убедитесь лично в качестве нашей работы.
-			.rbook__list.row(data-el=".rbook__item")
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
-					.rbook__content
-						.rbook__data
+			.r-book__title.h2.tac Книга отзывов
+			.r-book__subtitle.h3.tac Естественно, у нас в стоматологии есть книга отзывов и предложений. #[br]Приходите и убедитесь лично в качестве нашей работы.
+			.r-book__list.row(data-el=".r-book__item" data-show="4")
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -45,12 +49,12 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-1.jpg") Читать отзыв
 				
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
-					.rbook__content
-						.rbook__data
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -58,12 +62,12 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-2.jpg") Читать отзыв
 				
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
-					.rbook__content
-						.rbook__data
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -71,12 +75,12 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-1.jpg") Читать отзыв
 
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
-					.rbook__content
-						.rbook__data
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -84,12 +88,12 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-2.jpg") Читать отзыв
 
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
-					.rbook__content
-						.rbook__data
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-1.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -97,12 +101,12 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-1.jpg") Читать отзыв
 
-				.rbook__item
-					.rbook__img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
-					.rbook__content
-						.rbook__data
+				.r-book__item
+					.r-book__img.img(style="background-image: url('upload/reviews/review-writen-2.jpg')")
+					.r-book__content
+						.r-book__data
 							ul
 								li
 									u Пациент
@@ -110,43 +114,53 @@ append content
 								li
 									u Что сделали
 									strong Лечение под микроскопом
-						a.rbook__btn.btn.--bg-blue.--sm() Читать отзыв
-			.rbook__more.more-btn
+						a.r-book__btn.btn.--bg-blue.--md(data-fancybox="r-book" data-src="upload/reviews/review-writen-2.jpg") Читать отзыв
+			.r-book__more.more-btn
 				.more-btn__icon
 					+icon('refresh')
 				.more-btn__text Показать еще
 
-	.rsoc.bg-blue.c-white
+	.r-soc.bg-blue.c-white
 		.case
-			.rsoc__title.h2 Отзывы в социальных сетях
-			.rsoc__list.row.arrows.--white
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-1-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-1-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/volkova_mua" target="_blank") @volkova_mua]
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-2-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-2-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/taisiache" target="_blank") @taisiache]
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-3-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-3-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/evatwinn" target="_blank") @evatwinn]
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-1-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-1-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/volkova_mua" target="_blank") @volkova_mua]
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-2-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-2-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/taisiache" target="_blank") @taisiache]
-				.rsoc__item
-					.rsoc__img(style="background-image: url('review-social-3-persona.png')")
-					.rsoc__user
-						.rsoc__photo(style="background-image: url('review-social-3-item.jpg')")
-						.rsoc__link #[a(href="https://instagram.com/evatwinn" target="_blank") @evatwinn]
+			.r-soc__title.h2.tac Отзывы в социальных сетях
+			.r-soc__list.row.chevrons.--white
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-1-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-1-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/volkova_mua" target="_blank") @volkova_mua]
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-2-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-2-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/taisiache" target="_blank") @taisiache]
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-3-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-3-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/evatwinn" target="_blank") @evatwinn]
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-1-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-1-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/volkova_mua" target="_blank") @volkova_mua]
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-2-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-2-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/taisiache" target="_blank") @taisiache]
+				.r-soc__item
+					.r-soc__img #[div.img(style="background-image: url('upload/reviews/review-social-3-item.jpg')")]
+					.r-soc__user
+						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-3-persona.png')")]
+						.r-soc__link #[a(href="https://instagram.com/evatwinn" target="_blank") @evatwinn]
+
+	include ../parts/rating
+
+
+	- var orderBgImg = 'upload/bgs/bg-order.png'
+	- var orderTitle = 'Запишитесь <br>на консультацию <br>к глав.врачу сейчас'
+	- var orderImg   = 'employees/employee-7.png'
+	- var orderImgMode = '--tatyana-ylkina-blue'
+	
+	include ../parts/order

@@ -16,8 +16,10 @@ append content
 		]
 	.page.bg-gray
 		.case
-			+breadcrumbs('page__bredcrumbs bredcrumbs', breadcrumbs)
-		.page__title.h2 Услуги
+			+breadcrumbs('page__breadcrumbs breadcrumbs', breadcrumbs)
+			.page__title.h2.tac Услуги
 
+	- var servicesHead = false
+	- var servicesClass = '--pt0'
 	include ../parts/services
 	include ../parts/questions

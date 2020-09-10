@@ -1,4 +1,11 @@
-.order
+if orderBgImg != undefined
+	- var orderStyle = "background-image: url('"+ orderBgImg +"')"
+if orderInputColor == 'white'
+	- var inputBgColor = '--bg-gray'
+else
+	- var inputBgColor = '--bg-white'
+
+.order.img(style=orderStyle class=orderClasses)
 	.case
 		.order__wrap.row
 			.order__content
@@ -6,27 +13,28 @@
 				.order__subtitle.h3!= orderSubtitle
 				if orderText != undfined
 					.order__text Оставьте контактные данные, в ближайшее время администратор свяжется с вами и запишет к главврачу
-				.order__form.i-bottom.--mlr-md
-					.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--name
+				.order__form.form.row.i-bottom.--mlr-md
+					.form__item.form__input.input.--lg.--icon.--w-md.--mlr-md.--name(class=inputBgColor)
 						label.input__title Ваше имя
 						.input__wrap
 							input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 							label.input__icon
 								+icon('user')
-					.form__item.form__input.input.--bg-gray.--lg.--icon.--w-md.--mlr-md.--phone
+					.form__item.form__input.input.--lg.--icon.--w-md.--mlr-md.--phone(class=inputBgColor)
 						label.input__title Ваш номер телефона:
 						.input__wrap
 							input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
 							label.input__icon
 								+icon('phone-gray')
-					button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
-					.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
+					button.form__item.form__btn.btn.--bg-blue.--lg.--w-md.--mlr-md Записаться на консультацию
+					.form__item.form__checkbox.checkbox.check.--border.--sm.--w-md.--mlr-md
 						input.checkbox__input(type="checkbox" name="policy" checked="checked")
-						label.checkbox__label Нажимая на кнопку, вы даете согласие #[br]на обработку своих персональных данных #[br]и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
-					.form__item.form__desc
+						label.checkbox__label Нажимая на кнопку, вы даете согласие #[br]на обработку своих персональных данных #[br]и соглашаетесь #[a(href="upload/policy.pdf" target="_blank") с политикой конфиденциальности].
+					.form__item.form__desc.--w-md.--mlr-md
 						+icon('time-gray')
 						span Осталось 3 места на этой неделе
-			.order__persona.persona.--tatyana-ylkina
+
+			.order__persona.persona(class=orderImgMode)
 				.persona__text
 					.persona__title Татьяна Улькина
 					.persona__desc Глав. врач клиники

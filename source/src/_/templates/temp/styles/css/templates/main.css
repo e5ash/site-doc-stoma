@@ -2,6 +2,7 @@
 @import url(../../libs/fancybox/dist/jquery.fancybox.css);
 @import url("../../fonts/Circe/stylesheet.css");
 @import url("../../fonts/IgraSans/stylesheet.css");
+@import url("../../fonts/VinnytsiaSansReg/stylesheet.css");
 *, :before, :after {
   padding: 0;
   margin: 0;
@@ -69,19 +70,19 @@ i {
 
 .case {
   position: relative;
-  width: 1200px;
+  max-width: 1170px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto; }
   @media screen and (max-width: 1199px) {
     .case {
-      width: 950px; } }
+      max-width: 950px; } }
   @media screen and (max-width: 992px) {
     .case {
-      width: 750px; } }
+      max-width: 750px; } }
   @media screen and (max-width: 767px) {
     .case {
-      width: 100%; } }
+      max-width: 100%; } }
 
 .row, .col {
   display: -webkit-box;

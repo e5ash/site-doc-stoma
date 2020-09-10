@@ -2,7 +2,7 @@ mixin panel(classes)
 	div(class=classes)
 		.case
 			.panel__wrap.row.i-mid
-				.panel__contacts
+				.panel__contacts.row.i-mid
 					.panel__address.address.row.i-mid
 						.address__icon
 							+icon('metro')
@@ -10,11 +10,12 @@ mixin panel(classes)
 					.panel__time
 						p Работаем ПН-СБ
 						p c 10:00 до 21:00
-				a.panel__logo.logo(href="")
-					+img('logo.png')
+				.panel__logo-wrap
+					a.panel__logo.logo(href="main.html")
+						+img('logo.png')
 
-				.panel__feedback
+				.panel__feedback.row.right.i-mid
 					.panel__call
 						.panel__phone #[a(href="tel:+78121111111") +7 (812) 111-11-11]
-						.panel__callback Заказать бесплатный звонок
-					a.panel__consult.btn.--bg-blue.--sm() Записаться #[br]на консультацию
+						.panel__callback #[a(data-fancybox="" data-src="#popup-callback" href="javascript:;") Заказать бесплатный звонок]
+					a.panel__consult.btn.--bg-blue.--sm(data-fancybox="" data-src="#popup-consult" href="javascript:;") Записаться #[br]на консультацию

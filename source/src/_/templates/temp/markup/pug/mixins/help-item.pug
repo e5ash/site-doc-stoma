@@ -1,5 +1,6 @@
 mixin help-item(img, text)
 	.help__item
 		.help__img
-			+img(img)
+			.help__img-wrap
+				+img(img)
 		.help__text!=text

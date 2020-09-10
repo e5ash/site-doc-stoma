@@ -1,7 +1,9 @@
-.clinic.bg-gray
+if clinicBgGray == true
+	- var clinicClass = 'bg-gray'
+.clinic(class=clinicClass)
 	.case
-		.clinic__title.h2 Комфорт пациентов на первом месте
-		.clinic__subtitle.h3 Интерьер клиники максимально продуман, чтобы #[br]наш пациент чувствовал себя комфортно
+		.clinic__title.h2.tac Комфорт пациентов на первом месте
+		.clinic__subtitle.h3.tac Интерьер клиники максимально продуман, чтобы #[br]наш пациент чувствовал себя комфортно
 		.clinic__list.row
 			.clinic__item
 				.clinic__img
@@ -20,13 +22,13 @@
 					+img('comfort/comfort-4.png')
 				.clinic__text В каждом кабинете прицельный рентгент аппарат, чтобы вы не тратили время на хождение #[br]по кабинетам
 		.clinic__imgs.imgs
-			.imgs__list.arrows.--gray
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
-				.imgs__list-item.img(style="background-image: url('upload/clinic-1.jpg')")
+			.imgs__list.chevrons.--gray
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
+				.imgs__list-item.img(data-src="upload/clinic-1.jpg" data-fancybox="clinic" style="background-image: url('upload/clinic-1.jpg')")
 			.imgs__nav
 				.imgs__nav-item.img(style="background-image: url('upload/clinic-1.jpg')")
 				.imgs__nav-item.img(style="background-image: url('upload/clinic-1.jpg')")

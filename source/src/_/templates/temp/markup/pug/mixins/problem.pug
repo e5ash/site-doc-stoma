@@ -1,9 +1,9 @@
 mixin problem(img, text, title)
-	.problems__item
-		.problems__img.img(style="background-image: url('upload/problems/" + img + "')")
-		.problems__content
+	.problems__item.problem
+		.problem__img.img(style="background-image: url('upload/problems/" + img + "')")
+		.problem__content
 			if title
-				.problems__title!=title
-				.problems__text!=text
+				.problem__title!=title
+				.problem__text!=text
 			else
-				.problems__name!=text
+				.problem__name.h4!=text

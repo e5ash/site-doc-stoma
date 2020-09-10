@@ -56,17 +56,17 @@ append content
 	include ../parts/terms
 	include ../parts/help
 	
-	.price-block.bg-gray
+	.price-block
 		.case
 			.price-block__title.h2.tac Наши цены на лечение детских зубов
 			.price-block__list
 				.price-block__item
-					.price-block__head.row
+					.price-block__head.row.i-mid
 						.price-block__name Циркониевые коронки
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
@@ -75,21 +75,22 @@ append content
 								li Фиксация постоянной корон
 
 				.price-block__item
-					.price-block__head.row
+					.price-block__head.row.i-mid
 						.price-block__name Циркониевые коронки
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
 								li Снятие оттисков
 								li Изготовление временной коронки
 								li Фиксация постоянной корон
-			+now('price-list__now now', 'employee/employee-2.png')
+			+now('price-block__now now', 'employees/employee-2.png')
 
 	- var orderTitle = 'Не знаете какой <br>у вас диагноз?'
+	- var orderSubtitle = 'Оставьте контактные данные и в ближайшее <br>время администратор свяжется с вами <br>для записи на консультацию'
 	include ../parts/transparency
 	include ../parts/order
 	include ../parts/kid-doc

@@ -1,8 +1,19 @@
-mixin review(date, img, text, name)
+mixin review(date, text, name, img, stars)
 	.reviews__item.review
-		.review__data.row
+		.review__data.row.i-mid
 			.review__date=date
 			.review__stars
+				- var starsGray   = 5 - stars
+				- var starsYellow = 5 - starsGray
+				- var i = 0
+				- while(i < starsYellow)
+					+icon('star-yellow')
+					- i++
+				- var i = 0
+				- while(i < starsGray)
+					+icon('star-gray')
+					- i++
+				
 		.review__img.img
 			+img(img)
 		.review__text=text

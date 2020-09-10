@@ -1,14 +1,24 @@
-mixin ri(img, count, imgs)
+mixin ri(img, count, stars, imgs)
 	.rating__item.ri
-		.ri__head
+		.ri__head.row.i-mid
 			.ri__img
 				+img('logos/' + img)
 			.ri__count
 				.ri__count-wrap
-				.ri__count-title=count
-			a.ri__btn.btn.--bg-blue.--md(href="", target="_blank") Все отзывы
+					- var starsGray   = 5 - stars
+					- var starsYellow = 5 - starsGray
+					- var i = 0
+					- while(i < starsYellow)
+						+icon('star-yellow')
+						- i++
+					- var i = 0
+					- while(i < starsGray)
+						+icon('star-gray')
+						- i++
+				.ri__count-title= "Оценка: " + count
+			a.ri__btn.btn.--bg-blue.--shadow-blue.--md(href="", target="_blank") Все отзывы
 		.ri__body
-			.ri__list.row.--w2
+			.ri__list.row(class='--w' + imgs.length)
 				each img in imgs
 					.ri__item
 						+img('reviews/' + img)

@@ -6,10 +6,12 @@ mixin ti(classes, img, name, text, position, desc, imgs)
 			.ti__name= name
 			.ti__text=text
 			.ti__data.row
-				.ti__position= position
+				if position
+					.ti__position= position
 				.ti__desc
-					+icon('icon-time-gray')
-					span= desc
+					.ti__desc-icon
+						+icon('time-gray')
+					.ti__desc-title Стаж: #[strong= desc]
 			if imgs
 				.ti__imgs
 					each imgsItem in imgs
