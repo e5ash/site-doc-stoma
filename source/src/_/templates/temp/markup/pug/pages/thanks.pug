@@ -1,19 +1,31 @@
 extend ../templates/main
 append top
-	- var title = ""
+	- var title = "Заявка принята"
 
 append content
+	- 
+		var breadcrumbs = [
+			[
+				'Главная',
+				'main.html',
+			],
+			[
+				title
+			]
+		]
 	.thanks.img(style="background-image: url('upload/bgs/bg-hello-thanks.jpg')")
 		.case
 			.thanks__wrap.row
 				.thanks__content
+					if breadcrumbs
+						+breadcrumbs('thanks__breadcrumbs breadcrumbs', breadcrumbs)
 					.thanks__title.h2 Отлично! Мы уже #[br]получили вашу заявку!
 					.thanks__subtitle.h3 Я свяжусь с вами в течение рабочего дня  #[br]с 10:00 до 21:00 по МСК, чтобы ответить на все  #[br]вопросы и записать на консультацию
 					.thanks__write.write
 						.write__title Уже есть вопросы? 
-						.write__desc Напишите нам. Среднее время ответа: 15 минут 
-						.write__wrap
-							.write__list
+						.write__subtitle Напишите нам. Среднее время ответа: 15 минут 
+						.write__wrap.row.i-mid
+							.write__list.row.i-mid
 								a.write__item.--whatsapp(href="" target="_blank")
 									.write__item-title WhatsApp
 									.write__item-icon
@@ -22,6 +34,7 @@ append content
 									.write__item-title Telegram
 									.write__item-icon
 										+icon('telegram')
+							.write__desc Нажмите на одну из кнопок, #[br]чтобы открыть чат со мной #[br]в удобном вам мессенджере
 
 				.thanks__persona.persona.--admin
 					.persona__text

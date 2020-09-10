@@ -1,4 +1,4 @@
-.will-heal
+.will-heal(class=willHealClass)
 	.case
 		.will-heal__wrap.row.i-top
 			.will-heal__content
@@ -12,5 +12,5 @@
 			.will-heal__list.chevrons.--gray
 				- var i = 0;
 				each teamItem in _team
-					+ti('will-heal__item --bg', _team[i][0], _team[i][1], _team[i][2], undefined, _team[i][4])
+					+ti('will-heal__item' + teamItemClass, _team[i][0], _team[i][1], _team[i][2], undefined, _team[i][4])
 					- i++

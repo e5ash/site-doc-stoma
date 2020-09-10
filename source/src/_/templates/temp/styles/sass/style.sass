@@ -81,6 +81,11 @@ body
 				svg
 					width: 14px
 					height: 14px
+	&.--error
+		.input
+			&__area
+				&::placeholder
+					color: #f00
 		
 .textarea
 	&__title
@@ -426,6 +431,8 @@ body
 
 	&__desc
 		margin-top: 90px
+		&.--mt-sm
+			margin-top: 45px
 	&__img
 		position: absolute
 		top: 0
@@ -439,6 +446,7 @@ body
 			// width: 100px
 		&.--women
 			img
+				height: 680px
 				&:nth-of-type(1)
 					z-index: 3
 				&:nth-of-type(2)
@@ -509,6 +517,8 @@ body
 		margin-right: 1px
 		padding-left: 30px
 		border-radius: 8px
+		&.--md
+			height: 115px
 		&.--smile-sm
 			.desc
 				&__icon
@@ -549,6 +559,40 @@ body
 					padding-left: 0
 					padding-right: 8px
 					top: 6px
+		&.--laptiop
+			.desc
+				&__icon
+					padding-left: 26px
+
+		&.--veneer
+			.desc
+				&__icon
+					padding-left: 22px
+					padding-right: 21px
+					top: 9px
+
+		&.--smile
+			.desc
+				&__icon
+					padding-left: 22px
+					padding-right: 0
+
+		&.--syringes
+			.desc
+				&__icon
+					padding-left: 20px
+					padding-right: 20px
+		&.--dent
+			.desc
+				&__icon
+					top: 7px
+					padding-left: 20px
+					padding-right: 20px
+			
+
+			
+			
+			
 
 			
 		&.--toys
@@ -729,6 +773,14 @@ body
 		.slick-arrow
 			width: 50px
 			height: 50px
+			svg
+				width: 14px
+				height: 14px
+
+	&.--md
+		.slick-arrow
+			width: 65px
+			height: 65px
 			svg
 				width: 14px
 				height: 14px
@@ -1095,6 +1147,12 @@ body
 			&__text
 				top: 318px
 				right: -66px
+	&.--admin
+		.persona
+			&__img
+			&__text
+				top: 375px
+				left: 395px
 
 	&__text
 		z-index: 2
@@ -1215,6 +1273,10 @@ body
 			font-weight: 800
 		&.--pl
 			padding-left: 36px
+	h5
+		font-size: 16px
+		font-weight: 800
+		margin-bottom: 10px
 
 
 .ti
@@ -1617,6 +1679,9 @@ $margin: 15px
 .price-list
 	padding-top: 100px
 	padding-bottom: 100px
+	&__title
+		margin-top: -25px
+		margin-bottom: 60px
 	&__nav
 		margin-bottom: 70px
 
@@ -1659,6 +1724,15 @@ $margin: 15px
 		padding-right: 50px
 		padding-bottom: 50px
 
+	&__wrap
+		.price-list
+			&__data
+				width: 50%
+				padding-right: 40px
+			&__text
+				width: 50%
+				padding-left: 40px
+
 	&__data
 		width: 100%
 		ul
@@ -1692,6 +1766,14 @@ $margin: 15px
 			font-weight: 800
 			padding-left: 20px
 
+	&__text
+		h3
+			margin-bottom: 12px
+		li
+			font-size: 14px
+			margin-bottom: 4px
+			&:last-of-type
+				margin-bottom: 0
 	&__now
 		margin-top: 35px
 		margin-left: -50px
@@ -1739,6 +1821,10 @@ $margin: 15px
 .now
 	overflow: hidden
 	padding-top: 20px
+	&.--white
+		.now
+			&__wrap
+				background-color: #fff
 	&__wrap
 		position: relative	
 		padding: 40px 160px 55px 390px
@@ -1752,7 +1838,7 @@ $margin: 15px
 		position: absolute
 		top: -20px
 		left: 14px
-		width: 330px
+		width: 350px
 		display: flex
 		align-items: flex-start
 
@@ -1773,12 +1859,16 @@ $margin: 15px
 	&__persona
 		position: absolute
 		&.--tatyana-ylkina
-			bottom: -40px
+			bottom: -65px
 			right: 30px
 		&.--tatyana-ylkina-blue
 			right: 80px
 			bottom: -155px
 			
+	&__text
+		max-width: 525px
+		margin-top: 20px
+		margin-bottom: 20px
 		
 
 .feedback
@@ -2200,6 +2290,14 @@ $margin: 15px
 .price-block
 	padding-top: 72px
 	padding-bottom: 100px
+	&.bg-gray
+		.price-block
+			&__head
+
+				&:before
+					// background-image: url('../../imgs/dots-darken.png')
+			&__name, &__count
+				background: #f0f0f0
 	&__title
 		margin-bottom: 55px
 	&__list
@@ -2211,6 +2309,7 @@ $margin: 15px
 			margin-bottom: 0
 	&__head
 		font-size: 18px
+		z-index: 1
 		position: relative
 		&:before
 			z-index: -1
@@ -2220,7 +2319,7 @@ $margin: 15px
 			left: 0
 			right: 0
 			height: 12px
-			background: url('../../imgs/dots.png') repeat-x center
+			background: url('../../imgs/dots.png') repeat-x center left
 	&__name, &__count
 		max-width: 50%
 		background-color: #fff
@@ -2263,12 +2362,15 @@ $margin: 15px
 
 .problems
 	padding-top: 74px
+	padding-bottom: 100px
 	&__title
 		margin-bottom: 10px
 	&__subtitle
 		margin-bottom: 64px 
 	&__list
 		width: 555px
+		position: relative
+		z-index: 2
 	&__item
 		display: flex
 		align-items: center
@@ -2277,7 +2379,8 @@ $margin: 15px
 		&:nth-of-type(odd)
 			background-color: #fff
 	&__content
-		padding-left: 25px
+		position: relative
+		padding-left: 7px
 		width: calc(100% - 555px)
 	&__quote
 		position: relative
@@ -2296,6 +2399,8 @@ $margin: 15px
 		&:after
 			margin-top: 41px
 			transform: rotate(180deg)
+	&__doctor
+		margin-top: 25px
 
 .problem
 	&__img
@@ -2303,16 +2408,702 @@ $margin: 15px
 		height: 104px
 		border: 6px solid #fff
 		border-radius: 50%
+		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1)
 	&__content
 		width: calc(100% - 104px)
 		padding-left: 25px
+	&__title
+		font-size: 18px
+		font-weight: 800
+		margin-bottom: 7px
+	&__text
+		color: #636363
+		line-height: 25px
 		
 	
 
-		
+
+.doctor
+	display: flex
+	flex-wrap: wrap
+	margin-right: -45px
+	&.--lg
+		.doctor
+			&__img
+				width: 535px
+				left: -83px
+			&__content
+				margin-left: auto
+				
+	&__img
+		width: 310px
+		position: absolute
+		bottom: -100px
+		left: 7px
 		
 
+	&__content
+		margin-left: auto
+		padding-top: 30px
+		padding-left: 28px
+		width: calc(100% - 310px)
+
+	&__name
+		font-size: 18px
+
+	&__text
+		font-size: 14px
+		line-height: 25px
+		opacity: 0.8
+		margin-top: 7px
+	&__desc
+		display: flex
+		align-items: center
+		margin-top: 13px
+		svg
+			width: 12px
+			position: relative
+			top: -1px
+			margin-right: 6px
+
+	&__btn
+		margin-top: 21px
+		max-width: 240px
+		&.--lg
+			font-size: 14px
 		
+		
+.braces
+	padding-top: 75px
+	padding-bottom: 95px
+	text-align: center
+	&__title
+		margin-bottom: 60px
+	&__list
+		margin-left: -$margin
+		margin-right: -$margin
+		margin-bottom: -30px
+	&__item
+		width: calc(100% / 4 - #{$margin} * 2)
+		margin-left: $margin
+		margin-right: $margin
+		margin-bottom: 30px
+	&__img
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 120px
+		height: 120px
+		border-radius: 50%
+		margin-left: auto
+		margin-right: auto
+		border: 1px solid rgba(255,255,255,.1)
+		margin-bottom: 23px
+		div
+			width: 100px
+			height: 100px
+			background-color: #fff
+			border-radius: 50%
+	&__name
+		font-size: 18px
+		line-height: 25px
+		font-weight: 700
+		margin-bottom: 3px
+	&__desc
+		line-height: 25px
+
+
+
+.portfolio
+	padding-top: 84px
+	padding-bottom: 100px
+	&__head
+		margin-bottom: 52px
+	&__arrows
+		font-size: 0
+		margin-left: auto
+		.slick-arrow
+			position: relative
+			&.slick-prev
+				left: 0
+				margin-right: 30px
+			&.slick-next
+				right: 0
+	&__item
+		display: flex !important
+		flex-wrap: wrap
+		&.--white
+			.portfolio
+				&__content
+					background-color: #fff
+				&__imgs
+					background-color: #fff
+
+	&__content
+		width: calc(100% - 370px - 20px)
+		margin-right: 20px
+		padding: 35px 40px 40px
+		background-color: #f0f0f0
+		border-radius: 8px
+
+	&__text
+		padding-bottom: 4px
+		h3
+			opacity: 0.85
+			font-size: 12px
+			text-transform: uppercase
+			margin-bottom: 11px
+		p
+			line-height: 25px
+			margin-bottom: 18px
+
+	&__imgs
+		width: 370px
+		padding: 10px
+		border-radius: 8px
+		background-color: #f0f0f0
+		
+	&__img
+		width: 100%
+		height: 172px
+		position: relative
+		transition: .3s
+		&-wrap
+			position: relative
+			overflow: hidden
+			border-bottom: 3px solid #fff
+			&:nth-of-type(1)
+				border-radius: 5px 5px 0 0
+			&:nth-of-type(2)
+				border-radius: 0 0 5px 5px
+			&:last-of-type
+				border-bottom: none
+		&.--blur
+			filter: blur(8px)
+			
+		
+	&__btn
+		max-width: 265px
+
+	&__show
+		z-index: 2
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+
+
+.show
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	transition: .3s
+	&__icon
+		width: 40px
+		margin-bottom: 10px
+	&__title
+		font-size: 13px
+		line-height: 17px
+		color: #fff
+		text-align: center
+		max-width: 140px
+	&.--hidden
+		opacity: 0
+		visibility: hidden
+		
+
+
+
+.implants
+	padding-top: 75px
+	padding-bottom: 100px
+	&__title
+		margin-bottom: 170px
+	&__list
+		margin-left: -15px
+		margin-right: -15px
+	&__item
+		width: calc(100% / 3 - #{$margin} * 2)
+		margin-left: $margin
+		margin-right: $margin
+	&__img
+		display: flex
+		justify-content: center
+		align-items: flex-end
+		height: 200px
+		margin-bottom: -80px
+	&__content
+		height: calc(100% - 120px)
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column
+		text-align: center
+		padding: 105px 18px 10px
+		border-radius: 8px
+		background-color: #f8f8f8
+	&__name
+		margin-bottom: 12px
+	&__desc
+		opacity: 0.8
+		min-height: 100px
+		line-height: 25px
+		margin-bottom: 25px
+	&__text
+		padding: 32px 40px
+		text-align: left
+		border-top: 1px solid rgba(0,0,0,0.05)
+		margin-left: -18px
+		margin-right: -18px
+		h4
+			margin-bottom: 10px
+		li
+			font-size: 14px
+			margin-bottom: 7px
+			&:last-of-type
+				margin-bottom: 0
+
+
+.full
+	padding-top: 80px
+	padding-bottom: 45px
+	&__title
+		margin-bottom: 10px
+	&__subtitle
+		margin-bottom: 62px
+	&__list
+		margin-left: -$margin
+		margin-right: -$margin
+		margin-bottom: -30px
+	&__item
+		width: calc(100% / 3 - #{$margin} * 2)
+		margin-left: $margin
+		margin-right: $margin
+		margin-bottom: 30px
+
+	&__wrap
+		background-color: #fff
+
+	&__img
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 140px
+		border-bottom: 1px solid #f0f0f0
+
+	&__name
+		
+
+	&__data
+		margin-top: 14px
+		ul
+			
+		li
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			width: 100%
+			font-size: 14px
+			line-height: 19px
+			padding-top: 13px
+			padding-bottom: 13px
+			border-top: 1px solid #f0f0f0
+		u
+			max-width: 70%
+			text-decoration: none
+		strong
+			font-weight: 800
+			max-width: 30%
+			margin-left: auto
+			.icon
+				width: 14px
+				height: 14px
+
+
+	&__inner
+		padding: 27px 27px 35px
+
+	&__country
+		display: flex
+		align-items: center
+		img
+			width: 16px
+			height: 16px
+			margin-right: 10px
+			position: relative
+			top: -1px
+		
+	&__price
+		padding-top: 15px
+		border-top: 1px solid #f0f0f0
+		&-title
+			font-size: 14px
+			line-height: 19px
+			margin-bottom: 13px
+		&-count
+			line-height: 20px
+
+	&__btn
+		margin-top: 20px
+
+	&__desc
+		margin-top: 23px
+		font-size: 14px
+		text-align: center
+
+.solutions
+	padding-top: 45px
+	padding-bottom: 100px
+	&__title
+		margin-bottom: 60px
+	&__list
+		margin-left: -$margin
+		margin-right: -$margin
+	&__item
+		padding: 30px 50px 40px
+		width: calc(100% / 2 - #{$margin} * 2)
+		margin-left: $margin
+		margin-right: $margin
+		background-color: #fff
+		border-radius: 8px
+	&__data
+		width: 100%
+		max-width: 250px
+
+	&__img
+		max-width: 200px
+		margin-left: auto
+	&__name
+		line-height: 35px
+		margin-bottom: 9px
+	&__desc
+		line-height: 25px
+	&__body
+		margin-top: 25px
+		padding-top: 25px
+		border-top: 1px solid #f0f0f0
+	&__text
+		li
+			font-size: 14px
+			margin-bottom: 4px
+			&:last-of-type
+				margin-bottom: 0
+	&__price
+		padding-top: 18px
+		&-title
+			font-size: 14px
+			line-height: 14px
+			margin-bottom: 17px
+		&-count
+			line-height: 20px
+	&__btn
+		margin-top: 25px
+		max-width: 265px
+
+
+.implant
+	padding-top: 95px
+	padding-bottom: 155px
+	&__content
+		width: 470px
+	&__list
+		padding-top: 22px
+		width: calc(100% - 470px)
+	&__item
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		margin-bottom: 30px
+		position: relative
+			margin-bottom: 0
+	&__img
+		position: relative
+		&-wrap
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 188px
+			position: relative
+		&.--shadow
+			&:after
+				content: ''
+				position: absolute
+				width: 96px
+				height: 28px
+				bottom: -56px
+				left: 50%
+				transform: translateX(-50%)
+				background: url('../../imgs/implant-block-shadow.png') no-repeat center
+			
+	&__text
+		width: calc(100% - 188px)
+		padding-left: 80px
+	&__name
+		margin-bottom: 12px
+	&__desc
+		line-height: 25px
+	&__count
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		width: 50px
+		height: 50px
+		font-size: 14px
+		color: $color-black
+		border-radius: 50%
+		background-color: #fff
+		position: absolute
+		top: 50%
+		right: 0
+		margin-right: -25px
+		margin-top: -25px
+		&:after
+			position: absolute
+			top: 50%
+			right: -6px
+			transform: translateY(-50%)
+			content: ''
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 7.5px 0 7.5px 8px
+			border-color: transparent transparent transparent #ffffff
+
+
+.types
+	padding-top: 82px
+	padding-bottom: 105px
+	&__title
+		margin-bottom: 60px
+	&__list
+		margin-left: -$margin
+		margin-right: -$margin
+		margin-bottom: -30px
+	&__item
+		width: calc(100% / 3 - #{$margin} * 2)
+		margin-left: $margin
+		margin-right: $margin
+		margin-bottom: 30px
+		border-radius: 8px
+		background-color: #fff
+		box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08)
+	&__img
+		height: 170px
+		border-radius: 8px 8px 0 0
+	&__content
+		display: flex
+		flex-direction: column
+		height: calc(100% - 170px)
+		padding: 27px 30px 30px
+	&__desc
+		font-size: 14px
+		line-height: 19px
+		margin-top: 8px
+		margin-bottom: 11px
+	&__text
+		opacity: 0.7
+		max-width: 255px
+		font-size: 14px
+		line-height: 19px
+	&__data
+		margin-top: 26px
+		margin-bottom: 12px
+		ul
+
+		li
+			display: flex
+			align-items: center
+			width: 100%
+			font-size: 14px
+			padding: 18px 0
+			border-top: 1px solid #f0f0f0
+		u
+			text-decoration: none
+			max-width: 70%
+		strong
+			max-width: 70%
+			margin-left: auto
+			text-align: right
+			font-weight: 800
+			svg
+				width: 13px
+				height: 13px
+
+	&__btn
+		margin-top: auto
+
+
+
+
+.process
+	padding-top: 65px
+	padding-bottom: 100px
+	&__title
+		margin-bottom: 60px
+	&__list
+		overflow: hidden
+		border-radius: 8px
+	&__item
+		padding: 30px
+		display: flex
+		align-items: center
+		background-color: #fff
+		&:nth-of-type(even)
+			background-color: #f8f8f8
+			.process
+				&__count
+					background-color: #ffffff
+	&__img
+		width: 515px
+		min-height: 320px
+		overflow: hidden
+		border-radius: 8px
+	&__content
+		width: calc(100% - 515px)
+		padding-left: 50px
+		padding-right: 35px
+	&__head
+		display: flex
+		align-items: flex-start
+		margin-bottom: 17px
+	&__count
+		font-size: 12px
+		padding: 9px 17px
+		border-radius: 5px
+		background-color: #f0f0f0
+		max-width: 84px
+	&__name
+		max-width: calc(100% - 84px)
+		padding-left: 22px
+	&__btn
+		max-width: 280px
+		margin-top: 31px
+	&__body
+		margin-bottom: -10px
+		ul
+			margin-bottom: 10px
+		li
+			margin-bottom: 7px
+			&:last-of-type
+				margin-bottom: 0
+		
+
+
+
+
+.do
+	padding-top: 75px
+	padding-bottom: 100px
+	&__title
+		margin-bottom: 60px
+	&__item
+		position: relative
+		padding: 56px 70px
+		border-radius: 8px
+		margin-bottom: 30px
+		background-color: #fff
+		&:last-of-type
+			margin-bottom: 0
+	&__name
+		margin-bottom: 30px
+	&__text
+		width: 630px
+		ul
+			margin-left: -30px
+			margin-right: -30px
+		li
+			display: flex
+			align-items: center
+			width: calc(100% / 2 - 60px)
+			margin-left: 30px
+			margin-right: 30px
+			margin-bottom: -1px
+			padding: 21.5px 0
+			border-top: 1px solid #f0f0f0
+			border-bottom: 1px solid #f0f0f0
+			span
+				line-height: 25px
+				display: inline-block
+				max-width: 235px
+				padding-right: 10px
+			svg
+				width: 14px
+				height: 14px
+				margin-left: auto
+	&__img
+		position: absolute
+		top: 50%
+		left: 800px
+		width: 365px
+		transform: translateY(-50%)
+
+
+.thanks
+	padding-top: 210px
+	padding-bottom: 100px
+	overflow: hidden
+	&__breadcrumbs
+		margin-bottom: 45px
+	&__title
+		margin-bottom: 25px
+	&__subtitle
+		margin-bottom: 45px
+	&__write
+		width: 100%
+		max-width: 535px
+	&__persona
+		position: absolute
+		width: 710px
+		bottom: -275px
+		right: -107px
+
+.write
+	padding: 25px 30px 35px
+	border-radius: 8px
+	background-color: #fff
+	&__title
+		font-size: 18px
+	&__subtitle
+		opacity: 0.8
+		margin-top: 7px
+		margin-bottom: 14px
+	&__list
+		margin-right: 19px
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 130px
+		height: 50px
+		border-radius: 5px
+		&.--whatsapp
+			margin-right: 20px
+			background-color: #37bc49
+			&:hover
+				background-color: darken(#37bc49, 10%)
+		&.--telegram
+			background-color: #039be5
+			&:hover
+				background-color: darken(#039be5, 10%)
+		&-title
+			color: #fff
+			font-size: 13px
+			margin-right: 14px
+		&-icon
+			width: 16px
+			height: 16px
+			font-size: 0
+		
+	&__desc
+		opacity: 0.5
+		font-size: 12px
+		line-height: 17px
+
+
+		
+
 
 
 

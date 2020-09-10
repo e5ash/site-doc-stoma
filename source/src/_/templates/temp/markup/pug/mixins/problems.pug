@@ -1,5 +1,5 @@
-mixin problems(title, subtitle, list, quote, img, teamIndex)
-	.problems.bg-gray(style="background-image: url('upload/bgs/bg-problems-1.jpg')")
+mixin problems(title, subtitle, list, quote, img, teamIndex, text)
+	.problems.bg-gray.img(style="background-image: url('upload/bgs/bg-problems-1.jpg')")
 		.case
 			.problems__title.h2.tac!= title
 			.problems__subtitle.h3.tac!= subtitle
@@ -11,13 +11,14 @@ mixin problems(title, subtitle, list, quote, img, teamIndex)
 						
 				.problems__content
 					.problems__quote.h3.tac!= quote
-					.problems__doctor.doctor
+					- var docItemClass = list.length > 6 ? '--lg' : undefined
+					.problems__doctor.doctor(class=docItemClass)
 						.doctor__img
 							+img(img)
 						.doctor__content
-							.doctor__name= _team[teamIndex][2]
-							.doctor__text= _team[teamIndex][3]
+							.doctor__name= _team[teamIndex][1]
+							.doctor__text!= text
 							.doctor__desc
 								+icon('time-gray')
 								span= "Стаж: " + _team[teamIndex][4]
-							a.doctor__btn.btn.--bg-blue.--lg() Записаться на срочный прием
+							a.doctor__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox data-src="#popup-consult" href="javascript:;") Записаться на срочный прием

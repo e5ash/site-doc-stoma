@@ -19,29 +19,31 @@ append content
 		var _hello = {
 			img     : 'upload/bgs/bg-hello-veneers.jpg',
 			title   : 'Установка виниров <br>с гарантией результата',
+			subtitle: 'в Санкт-Петербурге',
 			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
 			desc    : [
 				[
 					'Индивидуальный подбор цвета <br>виниров, согласно цвету кожи, <br>волос, глаз и пожеланиям пациента.',
 					'laptiop.png',
-					'laptiop'
+					'laptiop --md'
 				],
 				[
 					'Натуральность <br>и естественность улыбки <br>по форме, цвету виниров.',
 					'veneer.png',
-					'veneer'
+					'veneer --md'
 				],
 				[
 					'Натуральность <br>и естественность улыбки <br>по форме, цвету виниров.',
 					'smile.png',
-					'smile'
+					'smile --md'
 				],
 			],
 		}
+	- var helloDescClass = '--mt-sm'
 	+hello(
 		_hello.img, 
 		_hello.title, 
-		undefined, 
+		_hello.subtitle, 
 		_hello.text,
 		_hello.desc, 
 		breadcrumbs,
@@ -49,7 +51,7 @@ append content
 		undefined
 		)
 
-	+problems('Проблемы, которые решают виниры', 'Мы можем предложить установку брекет-систем пациенту со следующими <br>патологиями и дефектами зубного ряда:', [0,1,2,3], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employee-1.png', 0)
+	+problems('Проблемы, которые решают виниры', 'Мы можем предложить установку брекет-систем пациенту со следующими <br>патологиями и дефектами зубного ряда:', [0,1,2,3], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employees/employee-1.png', 0, 'Главный врач, 1000+ сложных <br>и успешных операций. Идейный <br>вдохновитель клиники.')
 
 	include ../parts/types
 
@@ -63,7 +65,7 @@ append content
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
@@ -77,14 +79,15 @@ append content
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
 								li Снятие оттисков
 								li Изготовление временной коронки
 								li Фиксация постоянной корон
-			+now('price-list__now now', 'employee/employee-2.png')
+			- var nowInputBgColor = '--bg-gray'
+			+now('price-block__now now --white', 'employees/employee-4.png')
 
 	- var orderTitle = 'Не знаете какие вам <br>нужны виниры?'
 	include ../parts/order
@@ -93,10 +96,12 @@ append content
 
 	+process('Как проходит процесс установки <br>керамических виниров', [0,1,2,3,4])
 
-	- var whyList = [9, 2, 10, 6, 7, 0, 3, 1, 4]
+	- var whyList = [9, 2, 10, 6, 7, 11, 3, 1, 4]
 	include ../parts/why
 
 	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	- var willHealClass = 'bg-gray'
+	- var teamItemClass = ''
 	include ../parts/will-heal
 
 	include ../parts/reviews

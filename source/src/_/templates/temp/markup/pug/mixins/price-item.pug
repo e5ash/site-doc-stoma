@@ -4,7 +4,7 @@ mixin price-item(id, name, data, text)
 			.price-list__name.h3=name
 			.price-list__icon
 		.price-list__body
-			.price-list__wrap.row
+			.price-list__wrap.row(class=priceText==true?'--cols':undefined)
 				if data
 					.price-list__data
 						ul
@@ -14,7 +14,7 @@ mixin price-item(id, name, data, text)
 									strong=dataItem[1]
 				if priceText
 					.price-list__text.text
-						h3
+						h3 В цену входят:
 						ul
 							li Сбор анамнеза
 							li Осмотр рот полости, рентген снимок

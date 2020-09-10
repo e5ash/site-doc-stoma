@@ -32,8 +32,8 @@ append content
 				],
 				[
 					'Максимальная натуральность <br>и естественность зубов.',
-					'smile.png',
-					'smile'
+					'smile-sm.png',
+					'smile-sm'
 				]
 			],
 		}
@@ -54,9 +54,12 @@ append content
 
 	- var orderTitle = 'Правильный выбор <br>протезирования'
 	- var orderSubtitle = 'возможен только после диагностики'
+	- orderText = true
+	- orderClasses = 'bg-gray'
+	- orderInputColor = 'gray'
 	include ../parts/order
 
-	.price-block.bg-gray
+	.price-block
 		.case
 			.price-block__title.h2.tac Наши цены на протезирование зубов
 			.price-block__list
@@ -66,7 +69,7 @@ append content
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
@@ -80,23 +83,24 @@ append content
 						.price-block__count 300 ₽
 					.price-block__body
 						.price-block__subtitle В цену входят:
-						.price-block__data
+						.price-block__data.text
 							ul
 								li Анестезия
 								li Обработка зуба
 								li Снятие оттисков
 								li Изготовление временной коронки
 								li Фиксация постоянной корон
-			+now('price-list__now now', 'employee/employee-2.png')
+			+now('price-block__now now', 'employees/employee-4.png')
 
-	- var whyList = [0,1,2,3,4,5,6,7,8]
+	- var whyList = [9, 2, 10, 6, 7, 11, 3, 1, 4]
+	- whyClasses = 'bg-gray'
 	include ../parts/why
 
 	include ../parts/portfolio
 
 	include ../parts/transparency
 
-	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	- var willHealTitle = 'Протезирование <br>осуществят'
 	include ../parts/will-heal
 
 	include ../parts/reviews

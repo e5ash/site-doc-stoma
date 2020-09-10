@@ -1,5 +1,7 @@
 .price-list.tabs
 	.case
+		if priceListTitle != undefined
+			.price-list__title.h2.tac!= priceListTitle
 		.price-list__wrap
 			if priceListShow != false
 				.price-list__nav.tabs-nav

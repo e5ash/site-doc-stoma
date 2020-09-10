@@ -2,7 +2,7 @@ mixin types-item(img, name, desc, text, data)
 	.types__item
 		.types__img.img(style="background-image: url('" + img + "')")
 		.types__content
-			.types__name!=name
+			.types__name.h3!=name
 			.types__desc!=desc
 			.types__text!=text
 			.types__data
@@ -17,4 +17,4 @@ mixin types-item(img, name, desc, text, data)
 									+icon('cross')
 								else
 									=item[1]
-			a.types__btn.btn.--bg-blue.--lg() Записаться на консультацию
+			a.types__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox="" data-src="#popup-consult" href="javascript:;") Записаться на консультацию

@@ -79,14 +79,14 @@ footer.footer
 		.popup__content
 			.popup__title.h2 Запишитесь #[br]на консультацию
 			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут, подберёт удобное время #[br]для консультации врача и ответит на все вопросы
-			.popup__form.form.row.i-bottom.--mlr-md
+			form.popup__form.form.row.i-bottom.--mlr-md
 				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--name
 					label.input__title Ваше имя
 					.input__wrap
 						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 						label.input__icon
 							+icon('user')
-				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone.--required
 					label.input__title Ваш номер телефона:
 					.input__wrap
 						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
@@ -107,14 +107,14 @@ footer.footer
 		.popup__content
 			.popup__title.h2 Закажите #[br]бесплатный звонок
 			.popup__subtitle.h4 Оставьте свои контактные данные, администратор свяжется #[br]с Вами в течение 15 минут и ответит на все вопросы
-			.popup__form.form.row.i-bottom.--mlr-md
+			form.popup__form.form.row.i-bottom.--mlr-md
 				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--name
 					label.input__title Ваше имя
 					.input__wrap
 						input.input__area(type="text" name="name" placeholder="Мария Алексеевна")
 						label.input__icon
 							+icon('user')
-				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone
+				.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-md.--phone.--required
 					label.input__title Ваш номер телефона:
 					.input__wrap
 						input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")

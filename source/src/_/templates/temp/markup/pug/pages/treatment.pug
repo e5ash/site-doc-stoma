@@ -1,6 +1,6 @@
 extend ../templates/main
 append top
-	- var title = ""
+	- var title = "Лечение зубов"
 
 append content
 	- 
@@ -10,7 +10,7 @@ append content
 				'main.html',
 			],
 			[
-				''
+				title
 			]
 		]
 
@@ -22,17 +22,17 @@ append content
 			text    : 'На консультации мы составим подробный план лечения, ответим <br>на все вопросы и рассчитаем стоимость для вас',
 			desc    : [
 				[
-					'Современные и самые качественные пломбировочные материалы',
+					'Современные и самые качественные <br>пломбировочные материалы',
 					'syringes.png',
 					'syringes'
 				],
 				[
-					'100% безболезненность лечения',
+					'100% безболезненность <br>лечения',
 					'sheild.png',
 					'sheild'
 				],
 				[
-					'Спасение, а не замена зуба – наш приоритет',
+					'Спасение, а не замена <br>зуба – наш приоритет',
 					'dent.png',
 					'dent'
 				]
@@ -49,13 +49,15 @@ append content
 		undefined
 		)
 
-	+problems('Некоторые из симптомов <br>заболевания зубов', undefined, [9, 10, 11, 12, 13, 14, 15], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employees/employee-1.png', 0)
+	+problems('Некоторые из симптомов <br>заболевания зубов', undefined, [9, 10, 11, 12, 13, 14, 15], 'Если вы обнаружили один <br>или несколько из этих симптомов, <br>не откладывайте лечение и срочно <br>обратитесь к специалисту!', 'employees/employee-1.png', 0, 'Главный врач, 1000+ сложных <br>и успешных операций. Идейный <br>вдохновитель клиники.')
 
 	- var whyList = [0,1,2,3,4,5,6,7,8]
 	include ../parts/why
 
+	- var orderBgImg = 'upload/bgs/bg-order-2.jpg'
 	- var orderTitle = 'Запишитесь <br>на консультацию <br>к глав.врачу сейчас'
 	- var orderImg = 'employees/employee-7.png'
+	- var orderInputColor = 'gray'
 	include ../parts/order
 
 	- 
@@ -89,23 +91,37 @@ append content
 			]
 		]
 
-	- var priceTextTrue = true
-	- var nowImg        = 'employee/employee-4.png'
+	- var parsePrice = price
+	- var priceText = true
+	- var priceListShow = false
+	- var priceListTitle = 'Цены на лечение зубов'
+	- var nowImg        = 'employees/employee-4.png'
 	include ../parts/price-list
 
 	include ../parts/transparency
 
 	- var orderTitle = 'Не знаете какой <br>у вас диагноз?'
+	- var orderSubtitle = 'Оставьте контактные данные и в ближайшее <br>время администратор свяжется с вами <br>для записи на консультацию'
+	- var orderBgImg = undefined
+	- var orderImg   = 'employees/employee-1.png'
+	- var orderInputColor = 'white'
 	include ../parts/order
 
+
+	- var portfolioClass = 'bg-gray'
+	- var portfolioItemClass = '--white'
 	include ../parts/portfolio
 
 	+process('Как проходит процесс <br>лечения зубов', [0,5,6])
 
 	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	- var willHealClass = 'bg-gray'
+	- var teamItemClass = undefined
 	include ../parts/will-heal
 	include ../parts/reviews
 	include ../parts/rating
+
+	- var clinicBgGray = false
 	include ../parts/clinic
 	include ../parts/questions
 

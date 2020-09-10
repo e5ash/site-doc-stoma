@@ -1,5 +1,8 @@
 if orderBgImg != undefined
 	- var orderStyle = "background-image: url('"+ orderBgImg +"')"
+else
+	- var orderStyle = '' 
+	
 if orderInputColor == 'white'
 	- var inputBgColor = '--bg-gray'
 else
@@ -12,7 +15,7 @@ else
 				.order__title.h2!=orderTitle
 				.order__subtitle.h3!= orderSubtitle
 				if orderText != undfined
-					.order__text Оставьте контактные данные, в ближайшее время администратор свяжется с вами и запишет к главврачу
+					.order__text.h4 Оставьте контактные данные, в ближайшее время администратор свяжется с вами и запишет к главврачу
 				.order__form.form.row.i-bottom.--mlr-md
 					.form__item.form__input.input.--lg.--icon.--w-md.--mlr-md.--name(class=inputBgColor)
 						label.input__title Ваше имя

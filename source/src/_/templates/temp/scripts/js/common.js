@@ -13,6 +13,170 @@ $(document).ready(function() {
 		hover    : '--hover'
 	}
 
+	var c = { // c - classes
+		state: {
+			active: 'active',
+			filled: 'filled',
+			valid: 'valid',
+			error: 'error',
+			focus: 'focus',
+			checked: 'checked',
+			required: 'required'
+		},
+		sElem: '__', // separator Element
+		sMode: '_' // separator Modifier
+
+	};
+var input = {
+		class: {
+			block: 'input',
+			area: 'area'
+		},
+		block: null,
+		placeholder: null,
+		area: null,
+		value: null,
+		Vars: function(block){
+			this.block = block.parents('.' + this.class.block);
+		},
+		Filled: function(block){
+			this.Vars(block);
+			this.value = block.val();
+			if (this.value != ''){
+				this.block.addClass(this.class.block + c.sMode + c.state.filled)
+			}
+			else {
+				this.block.removeClass(this.class.block + c.sMode + c.state.filled)
+			}
+		},
+		OnFocus: function(block){
+			this.Vars(block);
+			this.block.addClass(this.class.block + c.sMode + c.state.focus).removeClass(this.class.block + c.sMode + c.state.error);
+		},
+		UnFocus: function(block){
+			this.block = block.parents('.' + this.class.block);
+			this.block.removeClass(this.class.block + c.sMode + c.state.focus);
+		},
+		EventValid: function(block){
+			this.Vars(block);
+			this.block.removeClass(this.class.block + c.sMode + c.state.error);
+			return 0;
+		},
+		EventValidError: function(block){
+			this.Vars(block);
+			this.block.addClass(this.class.block + c.sMode + c.state.error);
+			return 1;
+		},
+		Validation: function(block){
+			this.Vars(block);
+			this.value = block.val();
+			if (this.value != ''){
+				if (this.block.hasClass(this.class.block + '_phone')){
+					if (this.value.length != 18){
+						return this.EventValidError(block);
+					}
+					else{
+						return this.EventValid(block);
+					}
+				}
+				else{
+					return this.EventValid(block);
+				}
+			}
+			else {
+				return this.EventValidError(block);
+			}
+		},
+		Init: function () {
+			this.area = '.' + input.class.block + c.sElem + input.class.area;
+			$(window).on('load', function () {
+				$('body').find(input.area).each(function () {
+					input.Filled($(this));
+				})
+			});
+			$(this.area).on('focusin', function () {
+				input.OnFocus($(this));
+			});
+			$(this.area).on('focusout', function () {
+				input.UnFocus($(this));
+			});
+			$(this.area).on('keyup', function () {
+				input.Filled($(this));
+			});
+			$('.' + this.class.block + '_phone ' + this.area).mask('+7 (000) 000-00-00'); // phone mask
+		}
+	};
+
+	var textarea = {
+		class: {
+			block: 'textarea',
+			area: 'area'
+		},
+		block: null,
+		placeholder: null,
+		area: null,
+		value: null,
+		Vars: function(block){
+			this.block = block.parents('.' + this.class.block);
+		},
+		Filled: function(block){
+			this.Vars(block);
+			this.value = block.val();
+			if (this.value != ''){
+				this.block.addClass(this.class.block + c.sMode + c.state.filled)
+			}
+			else {
+				this.block.removeClass(this.class.block + c.sMode + c.state.filled)
+			}
+		},
+		OnFocus: function(block){
+			this.Vars(block);
+			this.block.addClass(this.class.block + c.sMode + c.state.focus).removeClass(this.class.block + c.sMode + c.state.error);
+		},
+		UnFocus: function(block){
+			this.block = block.parents('.' + this.class.block);
+			this.block.removeClass(this.class.block + c.sMode + c.state.focus);
+		},
+		EventValid: function(block){
+			this.Vars(block);
+			this.block.removeClass(this.class.block + c.sMode + c.state.error);
+			return 0;
+		},
+		EventValidError: function(block){
+			this.Vars(block);
+			this.block.addClass(this.class.block + c.sMode + c.state.error);
+			return 1;
+		},
+		Validation: function(block){
+			this.Vars(block);
+			this.value = block.val();
+			if (this.value != ''){
+				return this.EventValid(block);
+			}
+			else {
+				return this.EventValidError(block);
+			}
+		},
+		Init: function () {
+			this.area = '.' + textarea.class.block + c.sElem + textarea.class.area;
+			$(window).on('load', function () {
+				$('body').find(textarea.area).each(function () {
+					textarea.Filled($(this));
+				})
+			});
+			$(this.area).on('focusin', function () {
+				textarea.OnFocus($(this));
+			});
+			$(this.area).on('focusout', function () {
+				textarea.UnFocus($(this));
+			});
+			$(this.area).on('keyup', function () {
+				textarea.Filled($(this));
+			});
+		}
+	};
+
+
 	var check = {
 		class: {
 			block: 'check',
@@ -152,6 +316,17 @@ $(document).ready(function() {
 		nextArrow: arrows.next,
 	})
 
+	var portfolio = {
+		list  : $('.portfolio__list'),
+		arrows: $('.portfolio__arrows')
+	}
+	portfolio.list.slick({
+		fade: true,
+		appendArrows: portfolio.arrows,
+		prevArrow: arrows.prev,
+		nextArrow: arrows.next,
+	})
+
 	$('.tabs').each(function(){
 		var firstEl     = $(this).find('.tabs-nav li:first-of-type'),
 				firstElItem = $(this).find('.tabs-item:first-of-type');
@@ -222,4 +397,87 @@ $(document).ready(function() {
 		el.slideDown(300);
 		$(this).hide();
 	})
+
+	$('.portfolio__show').on('click', function() {
+		$(this).siblings('.portfolio__img').removeClass('--blur');
+		$(this).toggleClass(cls.hidden);
+	});
+
+
+
+
+
+	function formElementError(el){
+		el.addClass('--error');
+		return 1;
+	}
+
+	$('body').on('click', 'form button', function(event) {
+		event.preventDefault();
+		var form          = $(this).parents('form'),
+				requiredItems = form.find('.--required'),
+				errorsCount   = 0,
+				value         = null;
+
+		requiredItems.each(function(index, el) {
+			if ($(this).hasClass('input')) {
+				value = $(this).find('input').val();
+				if (value == '' || value == undefined)
+					errorsCount += formElementError($(this));
+				if ($(this).hasClass('--phone') && value.length < 18) {
+					errorsCount += formElementError($(this));
+				}
+			}
+			if ($(this).hasClass('textarea')) {
+				value = $(this).find('textarea').val();
+				if (value == '' || value == undefined)
+					errorsCount += formElementError($(this));
+			}
+			if ($(this).hasClass('checkbox')) {
+				value = $(this).find('input').attr('checked');
+				if (value != 'checked')
+					errorsCount += formElementError($(this));
+			}
+		});
+
+		console.log(errorsCount);
+
+		if (errorsCount == 0) {
+			form.submit();
+			window.location = 'thanks.html'
+		}
+	});
+
+
+	const urlParams = new URLSearchParams(location.search);
+
+	function getUtm(name){
+		var href = location.search.slice(name, '&');
+		return urlParams.get(name);
+	}
+
+	$('form').each(function(index, el) {
+		var formName     = $(this).attr('data-form-name'),
+				utm_source   = getUtm('utm_source'),
+				utm_medium   = getUtm('utm_medium'),
+				utm_campaign = getUtm('utm_campaign'),
+				utm_term	   = getUtm('utm_term'),
+				utm_content  = getUtm('utm_content');
+
+		$(this).append('<input type="hidden" name="page" value="' + document.title + '">');
+		$(this).append('<input type="hidden" name="url" value="' + location.origin + location.pathname + '">');
+
+		if(formName)
+			$(this).append('<input type="hidden" name="form" value="' + formName + '">');
+		if(utm_source)
+			$(this).append('<input type="hidden" name="utm_source" value="' +   utm_source + '">');
+		if(utm_medium)
+			$(this).append('<input type="hidden" name="utm_medium" value="' +   utm_medium + '">');
+		if(utm_campaign)
+			$(this).append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
+		if(utm_term)
+			$(this).append('<input type="hidden" name="utm_term" value="' +     utm_term + '">');
+		if(utm_content)
+			$(this).append('<input type="hidden" name="utm_content" value="' +  utm_content + '">');
+	});
 });

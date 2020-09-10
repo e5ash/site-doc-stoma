@@ -17,7 +17,7 @@ mixin hello(img, title, subtitle, text, desc, breadcrumbs, imgs, imgsMode, list,
 								.hello__item-title.h4= listItem[1]
 				if form != false
 					form.hello__form.form.row.i-bottom.--mlr-sm
-						.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-sm.--phone
+						.form__item.form__input.input.--bg-white.--lg.--icon.--w-md.--mlr-sm.--phone.--required
 							label.input__title Ваш номер телефона:
 							.input__wrap
 								input.input__area(type="tel" name="phone" placeholder="+7 (495) 123-45-67")
@@ -30,7 +30,7 @@ mixin hello(img, title, subtitle, text, desc, breadcrumbs, imgs, imgsMode, list,
 				if text
 					.hello__text!= text
 				if desc
-					.hello__desc.desc
+					.hello__desc.desc(class=helloDescClass)
 						.desc__list.row
 							each descItem in desc
 								if descItem[2]

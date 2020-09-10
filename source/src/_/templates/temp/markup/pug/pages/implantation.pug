@@ -1,6 +1,6 @@
 extend ../templates/main
 append top
-	- var title = ""
+	- var title = "Имплантация зубов"
 
 append content
 	- 
@@ -10,7 +10,7 @@ append content
 				'main.html',
 			],
 			[
-				''
+				title
 			]
 		]
 
@@ -49,7 +49,7 @@ append content
 		undefined
 		)
 
-	include ../parts/types
+	// include ../parts/types
 
 	include ../parts/implants
 
@@ -59,13 +59,18 @@ append content
 
 	include ../parts/implant
 
+	- var portfolioClass = 'bg-gray'
+	- var portfolioItemClass = '--white'
 	include ../parts/portfolio
 
 	- var whyList = [0,1,2,3,4,5,6,7,8]
 	include ../parts/why
 
 	- var willHealTitle = 'Ваши зубы <br>будут лечить'
+	- var willHealClass = 'bg-gray'
+	- var teamItemClass = ''
 	include ../parts/will-heal
+
 
 	include ../parts/reviews
 
