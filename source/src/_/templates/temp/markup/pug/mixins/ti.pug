@@ -15,4 +15,4 @@ mixin ti(classes, img, name, text, position, desc, imgs)
 			if imgs
 				.ti__imgs
 					each imgsItem in imgs
-						.ti__imgs-item(data-fancybox="" data-src=imgsItem style="background-image: url('"+ imgsItem +"')")
+						.ti__imgs-item.img(data-fancybox="" data-src=imgsItem style="background-image: url('"+ imgsItem +"')")

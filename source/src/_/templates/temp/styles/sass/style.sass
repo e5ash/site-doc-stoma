@@ -231,6 +231,9 @@ body
 					transform: scale(1)
 				
 
+.m-panel
+	display: none
+
 
 .header
 	z-index: 10
@@ -264,6 +267,8 @@ body
 		font-family: $font-family-3
 		letter-spacing: 0.72px
 		margin-bottom: 4px
+		&-icon
+			display: none
 	&__callback
 		a
 			color: $color-blue
@@ -1403,6 +1408,9 @@ $margin: 15px
 			border-radius: 8px
 			overflow: hidden
 			cursor: pointer
+			div
+				width: 100%
+				height: 100%
 		.slick-arrow
 			top: 50%
 			margin-top: -40px
@@ -1416,6 +1424,9 @@ $margin: 15px
 			border-radius: 8px
 			overflow: hidden
 			cursor: pointer
+			div
+				width: 100%
+				height: 100%
 		.slick-slide
 			transition: .3s
 			opacity: 0.3
@@ -1448,6 +1459,9 @@ $margin: 15px
 			right: 0
 			bottom: 0
 			border: 15px solid #f0f0f0
+		div
+			width: 100%
+			height: 100%
 	&__content
 		padding-left: 55px
 		width: calc(100% - 650px)
@@ -1673,6 +1687,9 @@ $margin: 15px
 			right: 0
 			bottom: 0
 			border: 15px solid #f0f0f0
+		div
+			width: 100%
+			height: 100%
 
 
 
@@ -2005,6 +2022,8 @@ $margin: 15px
 	&__title
 		margin-bottom: 60px
 	&__list
+		.slick-arrow
+			top: 180px
 		.slick-slide
 			padding-bottom: 5px
 	&__item
@@ -2620,7 +2639,7 @@ $margin: 15px
 	padding-top: 75px
 	padding-bottom: 100px
 	&__title
-		margin-bottom: 170px
+		margin-bottom: 55px
 	&__list
 		margin-left: -15px
 		margin-right: -15px
@@ -3104,6 +3123,28 @@ $margin: 15px
 
 		
 
+.swipe
+	display: none
+	// display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	&__icon
+		width: 38px
+		height: 38px
+		margin-right: 20px
+	&__title
+		font-size: 13px
+		line-height: 18px
+		padding-top: 2px
+	&.--gray
+		.swipe
+			&__title
+				opacity: 0.7
+	&.--white
+		.swipe
+			&__title
+				color: #fff
 
 
 
@@ -3171,6 +3212,7 @@ $margin: 15px
 		opacity: 0.7
 		font-size: 11px
 		line-height: 16px
+		max-width: 545px
 
 	&__links
 		margin-top: 12px
@@ -3290,3 +3332,825 @@ $margin: 15px
 
 .bg-blue
 	background-color: $color-blue
+
+
+
+@media screen and (max-width: 1425px)
+	.chevrons
+		padding-left: 74px
+		padding-right: 74px
+		.slick-arrow
+			width: 66px
+			height: 66px
+			svg
+				width: 16px
+				height: 16px
+			&.slick-prev
+				left: 15px
+			&.slick-next
+				right: 15px
+
+	.will-heal
+		&__list
+			padding-left: 0
+			.slick-arrow
+				&.slick-prev
+					left: auto
+					right: 15px
+
+	.certificates__chevrons
+		padding-left: 0
+		padding-right: 0
+		.slick-arrow
+			&.slick-prev
+				left: auto
+			&.slick-next
+				right: auto
+
+	.r-soc
+		&__list
+			.slick-arrow
+				top: 180px
+
+	.portfolio
+		&__arrows
+			padding-left: 0
+			padding-right: 15px
+			.slick-arrow
+				&.slick-prev
+					left: auto
+				&.slick-next
+					right: auto
+
+
+@media screen and (max-width: 1199px)
+	.panel
+		&__contacts
+			width: 37.5%
+		&__address
+			margin-right: 15px
+			
+		&__logo
+			&-wrap
+				width: 25%
+		&__time
+			// display: none
+
+		&__feedback
+			width: 37.5%
+		&__call
+			margin-right: 15px
+		&__consult
+			min-width: 140px
+			
+	.nav__list > ul > li > ul > li > a
+		padding: 5px 37px
+
+	.h2
+		font-size: 48px
+		line-height: 54px
+
+	.hello
+		&__img
+			&.--women
+				img
+					display: none
+					&:nth-of-type(1)
+						display: block
+			
+
+	.service
+		padding: 20px
+		&__price
+			margin-left: 0
+			width: 100%
+			
+	.r-videos
+		&__list
+			.slick-arrow
+				top: 215px
+
+		&__wrap
+			height: 490px
+
+	.rating__desc
+		margin-left: 140px
+
+	.why
+		&__text
+			br
+				display: none
+
+	.transparency__content
+		z-index: 2
+		position: relative
+
+
+	.certificates
+		&__list
+			width: 320px
+		&__content
+			width: calc(100% - 320px)
+
+	.questions
+		&__content
+			margin-left: auto
+			margin-right: auto
+		&__title, &__text
+			text-align: center
+		&__img
+			display: none
+		&__form
+			&.--mlr-md
+				margin-left: auto
+				margin-right: auto
+
+	.about
+		&__persona
+			right: 0
+		&__desc
+			br
+				display: none
+			
+
+	.persona.--tatyana-ylkina-lg .persona__text
+		right: 0
+
+	.persona.--tatyana-ylkina-lg .persona__img
+		right: -70px
+		position: relative
+
+
+	.qualification__worker
+		right: 15px
+		&-up
+			display: none
+
+	.team
+		&__item
+			width: calc(100% / 2 - 15px * 2)
+	.footer
+		&__nav
+			ul
+				margin-bottom: 5px
+				width: 33.33% !important
+			li
+				&:last-of-type
+					margin-bottom: 0
+
+		&__text
+			max-width: 365px
+			p
+				display: inline
+
+
+@media screen and (max-width: 992px)
+	html, body
+		&.--no-scroll
+			overflow-y: hidden
+			
+	.swipe
+		display: flex
+		margin-top: 30px
+
+	.h2
+		font-size: 30px
+		line-height: 38px
+
+	.h3
+		font-size: 20px
+		line-height: 30px
+
+	.header
+		display: flex
+		flex-direction: column
+		position: fixed
+		top: 90px
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #f0f0f0
+		overflow-y: auto
+		transition: .3s
+		transform: translateX(-100%)
+		&__panel
+			order: 2
+		&.--toggle
+			transform: translateX(0%)
+
+	.panel
+		font-size: 12px
+		&__contacts
+			width: 100%
+		&__address
+			margin-right: auto
+
+		&__time
+			width: 105px
+			
+		&__logo
+			display: none
+		&__feedback
+			width: 100%
+			&.right
+				justify-content: flex-start
+		&__call
+			text-align: left
+			padding: 15px 0 0
+		&__phone
+			display: flex
+			align-items: center
+			&-icon
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 50px
+				height: 50px
+				padding: 17px
+				border: 1px solid #f0f0f0
+				border-radius: 50%
+				box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04)
+				background-color: #fff
+			&-wrap
+				padding-left: 10px
+		&__callback
+			display: none
+		&__consult
+			display: none
+
+
+	.address
+		width: 175px
+		&__text
+			padding-left: 10px
+
+	.m-panel
+		display: block
+		z-index: 100
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		padding-top: 20px
+		padding-bottom: 20px
+		transition: .3s
+		background-color: transparent
+		&.--scroll, &.--toggle
+			background-color: #f0f0f0
+			
+		&__btn
+			flex-direction: column
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			background-color: #fff
+			box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04)
+			&.--hum
+				span
+					width: 20px
+					height: 2px
+					transition: .3s
+					position: relative
+					background-color: #c4c4c4
+					margin-bottom: 4px
+					&:last-of-type
+						margin-bottom: 0
+				&.--toggle
+					span
+						&:nth-of-type(1)
+							top: 6px
+							transform: rotate(45deg)
+						&:nth-of-type(2)
+							opacity: 0
+						&:nth-of-type(3)
+							top: -6px
+							transform: rotate(-45deg)
+					
+			&.--call
+				svg
+					width: 20px
+					height: 20px
+
+
+		&__logo
+			width: 160px
+			margin-left: auto
+			margin-right: auto
+
+
+	.nav
+		padding-top: 15px
+		&__list
+			box-shadow: none
+			> ul
+				flex-wrap: wrap
+				flex-direction: column
+				> li
+					border-top: 1px solid #D8D8D8
+					border-right: none
+					&:last-of-type
+						border-bottom: 1px solid #D8D8D8
+					&:hover
+						> a
+							color: $color-black
+							background-color: transparent
+					> a
+						position: relative
+						font-size: 16px
+						justify-content: flex-start
+						background-color: transparent
+						padding-left: 30px
+						padding-right: 50px
+						border-radius: 0 !important
+						&:after
+							top: 50%
+							right: 5px
+							position: absolute
+							content: ''
+							width: 40px
+							height: 40px
+							border-radius: 50%
+							transform: translateY(-50%)
+							background-color: #fff
+							background-image: url('../../imgs/chevron-right-gray.svg')
+							background-repeat: no-repeat
+							background-position: 16px center
+							background-size: 10px auto
+					> ul
+						display: none
+
+
+	.hello
+		&__wrap
+			padding-top: 130px
+			padding-bottom: 70px
+		&__title
+			text-align: center
+		&__subtitle
+			text-align: center
+			margin-top: 20px
+		&__form
+			margin-top: 30px
+		&__desc
+			margin-top: 35px
+		&__img
+			position: relative
+			left: auto
+			width: 100%
+			margin-top: 30px
+			margin-bottom: -70px
+			&.--women
+				display: flex
+				justify-content: center
+				img
+					display: block !important
+					position: relative
+					height: 255px
+					left: auto !important
+					&:nth-of-type(2)
+						margin-left: -50px
+					&:nth-of-type(3)
+						margin-left: -50px
+
+	.form
+		max-width: 100% !important 
+		margin-left: 0 !important
+		margin-right: 0 !important
+		&__item
+			width: 100% !important
+			margin-left: 0 !important
+			margin-right: 0 !important
+
+	.desc
+		&__list
+			.slick-slide
+				padding-right: 1px
+		&__item
+			display: flex !important
+
+	.services
+		padding-top: 50px
+		padding-bottom: 55px
+		&__head
+			margin-bottom: 40px
+		&__name
+			display: none
+		&__title
+			text-align: center
+			width: 100%
+			// padding: 30px 35px
+		&__list
+			margin-left: -10px
+			margin-right: -10px
+			.slick-slide
+				float: none
+				width: 290px
+				height: auto
+				padding-left: 10px
+				padding-right: 10px
+				> div
+					height: 100%
+			.slick-track
+				display: flex
+				flex-wrap: wrap
+				&:before, &:after
+					display: none
+
+
+	.service
+		height: 100%
+		text-align: center
+		display: flex !important
+		flex-direction: column
+		flex-wrap: wrap
+		&__img
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 20px
+		&__content
+			padding-left: 0
+			padding-right: 0
+			width: 100%
+			text-align: center
+		&__subtitle
+			flex-direction: column
+			align-items: center
+			justify-content: center
+		&__name
+			
+		&__price
+			text-align: center
+			justify-content: center
+
+		&__data
+			margin-bottom: 27px
+			li
+				width: 100%
+				text-align: center
+				margin-right: 0
+				&:before
+					display: none
+		&__control
+			width: 100%
+			margin-top: auto
+		
+
+	.chevrons
+		padding-left: 0
+		padding-right: 0
+		.slick-arrow
+			display: none !important
+
+	.reviews
+		padding-top: 55px
+		padding-bottom: 60px
+		&__title
+
+		&__subtitle
+			margin-bottom: 45px
+			
+
+
+	.r-videos
+		&__list
+			margin-top: 45px
+		&__wrap
+			height: 310px
+		&__data
+			padding-top: 25px
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: -15px
+			&-col
+				width: 100% !important
+				padding-left: 0
+				padding-right: 0
+			&-item
+				margin-bottom: 18px
+		&__title
+			padding-bottom: 5px
+			margin-bottom: 5px
+
+
+	.play-video
+		transform: translate(-50%, -50%) scale(.75)
+
+
+	.review
+		padding: 25px 25px 30px
+		&__img
+			width: 85px
+			height: 85px
+			margin-top: 20px
+			margin-bottom: 20px
+			&:before
+				width: 20px
+				height: 20px
+				background-size: 100%
+
+
+	.rating
+		padding-top: 60px
+		padding-bottom: 60px
+		&__head
+			margin-bottom: 40px
+		&__data
+			width: 100%
+			text-align: center
+		&__title
+			margin-bottom: 13px
+		
+		&__desc
+			display: none
+
+	.ri
+		padding: 20px
+		&__head
+			flex-direction: column
+			align-items: center
+			margin-bottom: 25px
+		&__img
+			margin-bottom: 12px
+		&__count
+			margin-right: auto
+			margin-bottom: 14px
+		&__list
+			margin-bottom: 0
+		&__item
+			width: 100% !important
+			margin-bottom: 15px
+			&:last-of-type
+				margin-bottom: 0
+			
+
+	.why
+		padding-top: 55px
+		&__title
+			margin-bottom: 8px
+		&__subtitle
+			margin-bottom: 28px
+		&__list
+			margin-bottom: 0
+		&__item
+			width: 100%
+			margin-bottom: 34px
+			&:last-of-type
+				margin-bottom: 0
+		&__img
+			height: auto
+			margin-bottom: 15px
+
+
+	.persona
+		&.--anton-valov
+			.persona
+				&__text
+					top: 134px
+					left: -29px
+				&__img
+					width: 270px
+					height: auto
+		&__text
+			width: 140px
+			height: 140px
+			&:before
+				top: 7px
+				left: 7px
+				right: 7px
+				bottom: 7px
+		&__title
+			font-size: 14px
+			line-height: 18px
+			margin-bottom: 4px
+		&__desc
+			font-size: 12px
+			line-height: 15px
+	.transparency
+		&__wrap
+			padding-top: 55px
+			padding-bottom: 325px
+		&__content
+			width: 100%
+			max-width: 100%
+		&__title
+			text-align: center
+		&__director
+			top: auto
+			right: 50%
+			margin-right: -150px
+			bottom: -80px
+		&__item
+			padding: 20px
+		&__icon
+			width: 75px
+		&__text
+			width: calc(100% - 75px)
+			font-size: 16px
+			line-height: 27px
+			padding-left: 14px
+			br
+				display: none
+
+		&__more
+			max-width: 100%
+			
+
+	.will-heal
+		padding-top: 55px
+		padding-bottom: 140px
+		&__content
+			width: 100%
+			padding-right: 0
+		&__more
+			position: absolute
+			max-width: 100%
+			bottom: -85px
+			left: 15px
+			right: 15px
+		&__list
+			margin-top: 35px
+			width: calc(100% + 30px)
+
+	.clinic
+		padding-top: 55px
+		padding-bottom: 55px
+		&__title
+			margin-bottom: 10px
+		&__subtitle
+			margin-bottom: 30px
+		&__list
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+		&__item
+			width: 100%
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 30px
+			&:last-of-type
+				margin-bottom: 0
+		&__img
+			height: auto
+			margin-bottom: 5px
+		&__text
+			br
+				display: none
+
+	.imgs
+		&__list
+			
+			.slick-slide
+				width: 300px
+			&-item
+				height: 170px
+		&__nav
+			display: none
+
+
+	.certificates
+		padding-top: 55px
+		padding-bottom: 60px
+		&__wrap
+			flex-direction: column
+		&__content
+			width: 100%
+			padding-left: 0
+		&__title
+			text-align: center
+			margin-bottom: 20px
+		&__text
+			text-align: center
+		&__list
+			order: 2
+			width: calc(100% + 30px)
+		&__item
+			display: block !important
+			width: 307px !important
+			height: 432px
+			margin-left: auto
+			margin-right: auto
+		&__swipe
+			order: 3
+			
+	.questions
+		&__wrap
+			padding-top: 55px
+			padding-bottom: 45px
+
+	.page
+		&__breadcrumbs
+			padding-top: 100px
+			padding-bottom: 20px
+		&__title
+			padding-bottom: 30px
+
+
+
+	.about
+		&__wrap
+			padding-bottom: 470px
+		&__breadcrumbs
+			padding-top: 100px
+			margin-bottom: 20px
+		&__title
+			margin-bottom: 17px
+		&__persona
+			// width: 300px
+			right: 50%
+			transform: translateX(50%)
+
+
+	.persona.--tatyana-ylkina-lg .persona__img
+		width: 240px
+		height: auto
+		right: auto
+
+	.persona.--tatyana-ylkina-lg .persona__text
+		top: 170px
+
+			
+
+	.qualification
+		&__wrap
+			padding-top: 55px
+			padding-bottom: 0
+		&__content
+			width: 100%
+			max-width: 100%
+			text-align: center
+		&__subtitle
+			max-width: 100%
+		&__text
+			max-width: 100%
+		&__worker
+			margin-top: 12px
+			position: relative
+			right: auto
+			left: -10px
+			bottom: auto
+			margin-left: auto
+			margin-right: auto
+
+
+
+	.we
+		padding-top: 0
+		&__item
+			width: 100%
+		&__img
+			height: auto
+			margin-bottom: 12px
+			
+
+
+	.team
+		&__list
+		&__item
+		
+
+	.ti
+		&__imgs
+			display: none
+	// here
+
+
+
+	.footer
+		&__top
+			display: none
+		&__body
+			&-wrap
+				padding-top: 25px
+				padding-bottom: 25px
+			
+		&__nav
+			display: none
+		&__socials
+			width: 100%
+			ul
+				justify-content: center
+
+		&__bottom
+			padding-bottom: 10px
+			
+		&__data, &__text
+			width: 100%
+			max-width: 100%
+
+		&__links
+			width: 100%
+			margin-bottom: 22px
+			ul
+				margin-bottom: -6px
+			li
+				margin-bottom: 6px
+			a
+
+		&__requisits, &__contacts, &__dev
+			margin-bottom: 22px
+			
+
+		&__dev
+			margin-left: auto
+			margin-right: auto
+

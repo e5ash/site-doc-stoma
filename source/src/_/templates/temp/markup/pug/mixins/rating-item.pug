@@ -20,5 +20,5 @@ mixin ri(img, count, stars, imgs)
 		.ri__body
 			.ri__list.row(class='--w' + imgs.length)
 				each img in imgs
-					.ri__item
+					.ri__item(data-fancybox="" data-src='upload/reviews/' + img)
 						+img('reviews/' + img)

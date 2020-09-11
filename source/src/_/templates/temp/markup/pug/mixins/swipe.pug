@@ -1,0 +1,9 @@
+mixin swipe(classes, text, type)
+	if type == undefined
+		- type = 'gray'
+	if type != undefined
+		- var addClass = '--' + type
+	.swipe(class=classes class=addClass)
+		.swipe__icon
+			+icon('swipe' + '-' + type)
+		.swipe__title!=text

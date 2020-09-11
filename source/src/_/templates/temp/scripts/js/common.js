@@ -259,14 +259,47 @@ var input = {
 	$('.reviews__list').slick({
 		slidesToShow: 3,
 		prevArrow: arrows.prev,
-		nextArrow: arrows.next
+		nextArrow: arrows.next,
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					swipe: true
+				}
+			}
+		]
 	})
 
 	$('.will-heal__list').slick({
 		slidesToScroll: 2,
 		slidesToShow: 2,
 		prevArrow: arrows.prev,
-		nextArrow: arrows.next
+		nextArrow: arrows.next,
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 1
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 1,
+					swipe: false,
+					touchMove: false,
+				}
+			}
+		]
 	});
 
 	var imgs = {
@@ -278,13 +311,28 @@ var input = {
 		fade: true,
 		asNavFor: imgs.nav,
 		prevArrow: arrows.prev,
-		nextArrow: arrows.next
+		nextArrow: arrows.next,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					fade: false,
+					swipe: true,
+			    arrows: false,
+			    infinite: false,
+			    variableWidth: true,
+			    adaptiveHeight: true,
+			    focusOnSelect: true,
+				}
+			}
+		]
 	});
 	imgs.nav.slick({
 		arrows: false,
 		slidesToShow: 5,
 		asNavFor: imgs.list,
-		focusOnSelect: true
+		focusOnSelect: true,
+
 	});
 
 
@@ -298,7 +346,16 @@ var input = {
 		slidesToShow: 2,
 		prevArrow: arrows.prev,
 		nextArrow: arrows.next,
-		appendArrows: certificates.arrows
+		appendArrows: certificates.arrows,
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 1
+				}
+			}
+		]
 	})
 
 
@@ -307,6 +364,15 @@ var input = {
 		slidesToShow: 4,
 		prevArrow: arrows.prev,
 		nextArrow: arrows.next,
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToScroll: 3,
+					slidesToShow: 3
+				}
+			}
+		]
 	})
 
 	$('.r-soc__list').slick({
@@ -480,4 +546,66 @@ var input = {
 		if(utm_content)
 			$(this).append('<input type="hidden" name="utm_content" value="' +  utm_content + '">');
 	});
+
+
+	var mPanel = $('.m-panel');
+	$(window).on('load resize scroll', function () {
+		if ($(window).scrollTop() > 0) {
+			mPanel.addClass(cls.scroll);
+		} else{
+			mPanel.removeClass(cls.scroll);
+		}
+	})
+
+	var nav = $('.header'),
+			hum = $('.m-panel__btn.--hum');
+
+	hum.on('click', function () {
+		hum.toggleClass(cls.toggle)
+		nav.toggleClass(cls.toggle)
+		mPanel.toggleClass(cls.toggle)
+	})
+
+
+
+  var swiper = {
+  	desc: $('.desc__list'),
+  	services: $('.services__list'),
+  	rating: $('.rating__list'),
+  	team: $('.team__list'),
+  }
+  var settings = {
+    variableWidth: true,
+    swipe: true,
+    arrows: false,
+    infinite: false
+  }
+  slick_on_mobile( swiper.desc, settings);
+  slick_on_mobile( swiper.services, settings);
+  slick_on_mobile( swiper.rating, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.team, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+
+  function slick_on_mobile(slider, settings){
+    $(window).on('load resize', function() {
+      if ($(window).width() > 992) {
+        if (slider.hasClass('slick-initialized')) {
+          slider.slick('unslick');
+        }
+        return
+      }
+      if (!slider.hasClass('slick-initialized')) {
+        return slider.slick(settings);
+      }
+    });
+  };
 });

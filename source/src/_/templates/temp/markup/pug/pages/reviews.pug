@@ -119,7 +119,7 @@ append content
 				.more-btn__icon
 					+icon('refresh')
 				.more-btn__text Показать еще
-
+			+swipe('r-book__swipe', 'Проведите в сторону, чтобы <br>посмотреть все отзывы')
 	.r-soc.bg-blue.c-white
 		.case
 			.r-soc__title.h2.tac Отзывы в социальных сетях
@@ -154,7 +154,9 @@ append content
 					.r-soc__user
 						.r-soc__photo #[div.img(style="background-image: url('upload/reviews/review-social-3-persona.png')")]
 						.r-soc__link #[a(href="https://instagram.com/evatwinn" target="_blank") @evatwinn]
+			+swipe('r-soc__swipe', 'Проведите в сторону, чтобы <br>посмотреть все отзывы')
 
+			
 	include ../parts/rating
 
 
