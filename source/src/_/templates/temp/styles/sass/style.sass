@@ -512,6 +512,7 @@ body
 	position: relative
 	&__list
 		margin-right: -1px
+		margin-bottom: -1px
 	&__item
 		display: flex
 		align-items: center
@@ -520,6 +521,7 @@ body
 		height: 90px
 		background-color: #fff
 		margin-right: 1px
+		margin-bottom: 1px
 		padding-left: 30px
 		border-radius: 8px
 		&.--md
@@ -1742,13 +1744,14 @@ $margin: 15px
 		padding-bottom: 50px
 
 	&__wrap
-		.price-list
-			&__data
-				width: 50%
-				padding-right: 40px
-			&__text
-				width: 50%
-				padding-left: 40px
+		&.--cols
+			.price-list
+				&__data
+					width: 50%
+					padding-right: 40px
+				&__text
+					width: 50%
+					padding-left: 40px
 
 	&__data
 		width: 100%
@@ -2406,6 +2409,7 @@ $margin: 15px
 		max-width: 440px
 		margin-left: auto
 		margin-right: auto
+		left: 90px
 		&:before, &:after
 			content: ''
 			display: block
@@ -3137,6 +3141,7 @@ $margin: 15px
 		font-size: 13px
 		line-height: 18px
 		padding-top: 2px
+		text-align: left
 	&.--gray
 		.swipe
 			&__title
@@ -3383,6 +3388,21 @@ $margin: 15px
 					right: auto
 
 
+@media screen and (max-width: 1270px)
+	.popup
+		&.--lg
+			.popup
+				&__wrap
+					width: 950px
+					padding: 45px
+		&__content
+			z-index: 1
+			position: relative
+		&__img
+			right: 0
+			max-width: 460px
+		
+
 @media screen and (max-width: 1199px)
 	.panel
 		&__contacts
@@ -3489,6 +3509,77 @@ $margin: 15px
 	.team
 		&__item
 			width: calc(100% / 2 - 15px * 2)
+
+	.now
+		&__wrap
+			padding: 30px 30px 30px 390px
+			// padding-left: 360px
+		&__title
+			max-width: 420px
+		&__text
+			br
+				display: none
+		&__img
+			top: auto
+			bottom: 0
+	.order__content
+		z-index: 1
+		position: relative
+	.order__persona.--tatyana-ylkina
+		right: 0
+		bottom: -95px
+	.persona.--tatyana-ylkina .persona__img
+		width: 415px
+	.order__persona.--tatyana-ylkina-blue
+		right: 0
+		bottom: -185px
+	.persona.--tatyana-ylkina-blue .persona__text
+		right: 0
+	.shares__item
+		width: calc(100% / 3 - 30px)
+
+	.terms
+		&__list
+			justify-content: center
+		&__item
+			width: calc(100% / 3 - 15px * 2)
+
+	.problems
+		&__subtitle
+			br
+				display: none
+		&__list
+			width: 100%
+		&__content
+			display: none
+
+	.process
+		&__item
+			padding: 15px
+		&__img
+			width: 400px
+		&__content
+			width: calc(100% - 400px)
+		&__name
+			br
+				display: none
+
+	.do
+		&__item
+			padding: 30px
+		&__text
+			width: 500px
+		&__img
+			left: 670px
+
+	.thanks
+		&__persona
+			width: 500px
+			bottom: -100px
+
+	.persona.--admin .persona__text
+		top: 280px
+		left: 80px
 	.footer
 		&__nav
 			ul
@@ -3503,6 +3594,17 @@ $margin: 15px
 			p
 				display: inline
 
+@media screen and (max-width: 1030px)
+	.popup
+		&.--lg
+			.popup
+				&__wrap
+					width: 100%
+		&__content
+			z-index: 1
+			position: relative
+		&__img
+			display: none
 
 @media screen and (max-width: 992px)
 	html, body
@@ -3595,8 +3697,13 @@ $margin: 15px
 		padding-bottom: 20px
 		transition: .3s
 		background-color: transparent
+		border-bottom: 1px solid transparent
 		&.--scroll, &.--toggle
 			background-color: #f0f0f0
+		&.--scroll
+			border-color: #D8D8D8
+		&.--toggle
+			border-color: transparent
 			
 		&__btn
 			flex-direction: column
@@ -3681,9 +3788,12 @@ $margin: 15px
 
 
 	.hello
+		min-height: 1px
 		&__wrap
 			padding-top: 130px
 			padding-bottom: 70px
+		&__breadcrumbs
+			margin-bottom: 15px
 		&__title
 			text-align: center
 		&__subtitle
@@ -3693,6 +3803,10 @@ $margin: 15px
 			margin-top: 30px
 		&__desc
 			margin-top: 35px
+		&__text
+			text-align: center
+			br
+				display: none
 		&__img
 			position: relative
 			left: auto
@@ -3720,6 +3834,8 @@ $margin: 15px
 			width: 100% !important
 			margin-left: 0 !important
 			margin-right: 0 !important
+		&__desc
+			margin-top: -15px
 
 	.desc
 		&__list
@@ -3727,6 +3843,10 @@ $margin: 15px
 				padding-right: 1px
 		&__item
 			display: flex !important
+		&__title
+			br
+				// display: none
+			
 
 	.services
 		padding-top: 50px
@@ -3885,19 +4005,24 @@ $margin: 15px
 
 	.why
 		padding-top: 55px
+		padding-bottom: 50px
 		&__title
 			margin-bottom: 8px
 		&__subtitle
 			margin-bottom: 28px
 		&__list
 			margin-bottom: 0
+			
 		&__item
 			width: 100%
+			max-width: 360px
+			margin-left: auto
+			margin-right: auto
 			margin-bottom: 34px
 			&:last-of-type
 				margin-bottom: 0
 		&__img
-			height: auto
+			// height: auto
 			margin-bottom: 15px
 
 
@@ -3970,6 +4095,8 @@ $margin: 15px
 		&__list
 			margin-top: 35px
 			width: calc(100% + 30px)
+
+
 
 	.clinic
 		padding-top: 55px
@@ -4071,6 +4198,7 @@ $margin: 15px
 			
 
 	.qualification
+		overflow: hidden
 		&__wrap
 			padding-top: 55px
 			padding-bottom: 0
@@ -4090,6 +4218,9 @@ $margin: 15px
 			bottom: auto
 			margin-left: auto
 			margin-right: auto
+			margin-bottom: -200px
+			&-up
+				display: flex
 
 
 
@@ -4111,10 +4242,636 @@ $margin: 15px
 	.ti
 		&__imgs
 			display: none
+
+
+	.price-list
+		padding-top: 55px
+		padding-bottom: 25px
+		&__nav
+			margin-bottom: 30px
+		&__nav-swipe
+			margin-bottom: 40px
+
+		&__head
+			padding: 20px 0
+
+		&__name
+			padding-right: 10px
+
+		&__body
+			padding: 25px 0 25px
+
+		&__data
+			li
+				align-items: center
+				&:before
+					display: none
+			u
+				max-width: 70%
+			strong
+				max-width: 30%
+		&__now
+			margin-top: 15px
+			margin-left: 0
+			margin-right: 0
+
+	.tabs-nav
+		.slick-slide
+			padding-left: 5px
+			padding-right: 5px
+		ul
+			margin-bottom: 0
+		li
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+			&.--selected
+				a
+					box-shadow: none
+
+
+					
+	.now
+		&__wrap
+			padding: 20px 20px 260px
+
+		&__title, &__text
+			text-align: center
+			margin-left: auto
+			margin-right: auto
+		
+		&__img
+			// display: none
+			bottom: -2px
+			left: 50%
+			max-width: 205px
+			max-height: 240px
+			transform: translateX(-50%)
+
+	.order
+		&__wrap
+			padding-bottom: 0
+		&__content
+			max-width: 100%
+		&__title
+			text-align: center
+		&__subtitle
+			text-align: center
+		&__persona
+			position: relative
+			bottom: auto
+			right: auto
+			margin-top: 30px
+			margin-left: auto
+			margin-right: auto
+			
+	.persona.--tatyana-ylkina
+		bottom: 0
+		right: 0
+		.persona__img
+			width: 280px
+			height: auto
+		.persona__text
+			top: 130px
+
+	.order__persona.--tatyana-ylkina-blue
+		margin-bottom: -90px
+		bottom: 0px
+		right: 0
+		.persona__img
+			width: 280px
+			height: auto
+		.persona__text
+			top: 170px
 	// here
 
+	.certs
+		padding-top: 58px
+		padding-bottom: 60px
+		&__title
+			margin-bottom: 45px
+		&__list
+			margin-left: -5px
+			margin-right: -5px
+			.slick-slide
+				width: 270px
+				padding-left: 5px
+				padding-right: 5px
+
+		&__item
+			height: 370px
 
 
+
+	.mob-bg-none
+		background-image: none !important
+		background-color: #f0f0f0
+
+	.feedback
+		&__wrap
+			padding-bottom: 450px
+		&__breadcrumbs
+			padding-top: 100px
+			margin-bottom: 20px
+		&__inner
+			padding-left: 0
+			padding-right: 0
+		&__title
+			text-align: center
+		&__content
+			padding: 30px 35px 35px
+			&:before
+				top: auto
+				left: 50%
+				bottom: -19px
+				transform: translateX(-50%)
+				border-style: solid
+				border-width: 19px 15px 0 15px
+				border-color: #ffffff transparent transparent transparent
+
+		&__img
+			width: 400px
+			left: 50%
+			transform: translateX(-50%)
+
+	.r-book
+		padding-top: 55px
+		padding-bottom: 55px
+		&__subtitle
+			margin-bottom: 35px
+		&__list
+			margin-left: 0
+			margin-right: 0
+		&__item
+			display: flex !important
+			width: 100%
+			margin-left: 0
+			margin-right: 0
+		&__more
+			display: none
+
+	.r-soc
+		padding-top: 55px
+		padding-bottom: 50px
+		&__title
+			margin-bottom: 35px
+		&__item
+			display: block !important
+			width: 265px !important
+			margin-left: auto
+			margin-right: auto
+
+	.page
+		&__title
+			text-align: center
+
+	.shares
+		padding-bottom: 50px
+		&__list
+			margin-left: -5px
+			margin-right: -5px
+			margin-bottom: 0
+			.slick-track
+				display: flex
+				flex-wrap: wrap
+				&:before, &:after
+					display: none
+			.slick-slide
+				float: none
+				width: 275px
+				height: auto
+				padding-left: 5px
+				padding-right: 5px
+				> div
+					height: 100%
+				
+		&__item
+			width: 100%
+			height: 100%
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+
+
+	.more-text
+		margin-left: 0
+		margin-right: 0
+		flex-wrap: wrap
+		&__item
+			width: 100%
+			height: auto
+			margin-left: 0
+			margin-right: 0
+			border-top: 1px solid #EAEAEA
+			&:last-of-type
+				border-bottom: 1px solid #EAEAEA
+		&__title
+			display: none
+		&__toltip
+
+			
+
+	.toltip
+		position: relative
+		transform: none
+		left: auto
+		visibility: visible
+		opacity: 1
+		width: 100%
+		padding: 0
+		border-radius: 0
+		box-shadow: none
+		&:before
+			display: none
+			left: 50%
+			transform: translateX(-50%)
+		&.--toggle
+			.toltip
+				&__title
+					&:after
+						transform: translateY(-50%) rotate(-90deg)
+		&__title
+			position: relative
+			opacity: 0.8
+			font-size: 14px
+			text-transform: lowercase
+			padding: 14px 16px
+			margin-bottom: 0
+			&::first-letter
+				text-transform: uppercase
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				right: 0
+				width: 12px
+				height: 12px
+				transition: .3s
+				transform: translateY(-50%) rotate(90deg)
+				background: url('../../imgs/chevron-right-gray.svg') no-repeat center
+		&__text
+			display: none
+			font-size: 13px
+			line-height: 21px
+			padding: 0 16px 14px
+
+	.more-text__item:hover .toltip
+		transform: none
+
+	.map
+		padding-top: 0
+		&__wrap
+			display: flex
+			flex-direction: column
+			flex-wrap: wrap
+			padding: 0
+		&__block
+			width: 100%
+			order: 2
+			padding: 20px
+		&__area
+			position: relative
+			height: 280px
+		&__img
+			margin-bottom: 20px
+		&__list
+			padding-left: 0
+			padding-right: 0
+		&__btn
+			max-width: 100%
+			margin-left: auto
+			margin-right: auto
+
+	.terms
+		padding-top: 50px
+		padding-bottom: 45px
+		&__title
+			margin-bottom: 7px
+		&__subtitle
+			margin-bottom: 20px
+		&__list
+			margin-bottom: 0
+		&__item
+			width: 100%
+			margin-bottom: 30px
+			&:last-of-type
+				margin-bottom: 0
+		&__img
+			height: auto
+
+	.help
+		padding-top: 50px
+		padding-bottom: 50px
+		&__title
+			margin-bottom: 35px
+		&__list
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+		&__item
+			width: 100%
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 25px
+			&:last-of-type
+				margin-bottom: 0
+		&__text
+			margin-top: 13px
+	.price-block
+		padding-top: 50px
+		padding-bottom: 50px
+		&__list
+			padding: 30px 0
+		&__data
+			ul
+				display: flex
+				flex-direction: column
+				column-count: 1
+
+	.kid-doc
+		padding-top: 55px
+		padding-bottom: 140px
+		&__content
+			width: 100%
+			padding-top: 0
+			margin-bottom: 35px
+			padding-right: 0
+		&__item
+			width: 100%
+		&__btn
+			position: absolute
+			left: 15px
+			right: 15px
+			bottom: -90px
+			max-width: 100%
+
+	.problems
+		padding-top: 55px
+		padding-bottom: 55px
+		&__subtitle
+			margin-bottom: 30px
+		&__item
+			padding: 15px
+			display: flex !important
+			margin-bottom: 0
+	.problem
+		&__name
+			br
+				display: none
+
+	.braces
+		padding-top: 55px
+		padding-bottom: 45px
+		&__title
+			margin-bottom: 35px
+		&__list
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+		&__item
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+		&__img
+			margin-bottom: 15px
+
+	.portfolio
+		padding-top: 55px
+		padding-bottom: 55px
+		&__head
+			margin-bottom: 35px
+		&__title
+			width: 100%
+			text-align: center
+		&__content
+			order: 2
+			width: 100%
+			padding: 20px
+			margin-right: 0
+			margin-top: 10px
+		&__imgs
+			width: 100%
+		&__btn
+			max-width: 100%
+
+	.implants
+		padding-top: 55px
+		padding-bottom: 50px
+		&__title
+			margin-bottom: 20px
+
+	.full
+		padding-top: 55px
+		padding-bottom: 25px
+		&__subtitle
+			margin-bottom: 35px
+		&__list
+			// margin-left: 0
+			// margin-right: 0
+		&__item
+			margin-left: 0
+			margin-right: 0
+		&__btn
+			&.--shadow-blue
+				box-shadow: none
+
+	.solutions
+		padding-top: 25px
+		padding-bottom: 45px
+		&__title
+			margin-bottom: 30px
+		&__list
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+		&__item
+			padding: 25px
+			margin-left: 0
+			margin-right: 0
+			
+			
+	.implant
+		padding-top: 55px
+		padding-bottom: 50px
+		&__content
+			width: 100%
+		&__title
+			text-align: center
+			margin-bottom: 35px
+		&__list
+			width: 100%
+			padding-top: 0
+		&__item
+			flex-direction: column
+			margin-bottom: 45px
+			&:last-of-type
+				margin-bottom: 0
+		&__img-wrap
+			margin-bottom: 25px
+		&__img
+			&.--shadow
+				&:after
+					display: none
+			
+		&__count
+			right: 50%
+			&:after
+				display: none
+		&__text
+			text-align: center
+			padding-left: 0
+
+
+	.types
+		padding-top: 55px
+		padding-bottom: 50px
+		&__title
+			margin-bottom: 35px
+		&__list
+			margin-left: 0
+			margin-right: 0
+		&__item
+			margin-left: 0
+			margin-right: 0
+
+	.process
+		padding-top: 55px
+		padding-bottom: 55px
+		&__title
+			margin-bottom: 35px
+		&__item
+			display: flex !important
+			flex-wrap: wrap
+			padding: 20px
+		&__img
+			width: 100%
+			min-height: 220px
+			margin-bottom: 20px
+		&__content
+			width: 100%
+			padding-left: 0
+			padding-right: 0
+		&__head
+			flex-direction: column
+
+		&__name
+			padding-left: 0
+			padding-top: 21px
+			max-width: 100%
+		&__btn
+			max-width: 100%
+			
+
+	.order
+		&__wrap
+			padding-top: 50px
+	.order__persona.--tatyana-ylkina
+		margin-bottom: -100px
+
+
+	.do
+		padding-top: 50px
+		padding-bottom: 45px
+		&__title
+			margin-bottom: 25px
+		&__list
+			.slick-slide
+				padding-top: 50px
+		&__item
+			padding: 120px 30px 30px
+			margin-bottom: 0
+		&__img
+			top: -50px
+			left: 50%
+			width: auto
+			height: 140px
+			transform: translateX(-50%)
+		&__name
+			text-align: center
+		&__text
+			width: 100%
+			ul
+				display: flex
+				flex-direction: column
+				column-count: 1
+				margin-left: 0
+				margin-right: 0
+			li
+				width: 100%
+				padding: 14px 0
+				margin-left: 0
+				margin-right: 0
+
+	.thanks
+		padding-top: 110px
+		padding-bottom: 0
+		&__content
+			width: 100%
+		&__breadcrumbs
+			display: none
+		&__title
+			text-align: center
+		&__subtitle
+			text-align: center
+			margin-bottom: 25px
+		&__write
+			// max-width: 100%
+			margin-left: auto
+			margin-right: auto
+		&__persona
+			position: relative
+			width: 300px
+			left: auto
+			right: auto
+			bottom: -20px
+			margin-left: auto
+			margin-right: auto
+
+	.persona.--admin .persona__text
+		display: none
+
+	.fancybox-slide--html
+		padding: 60px 6px
+	.popup
+		&.--lg
+			.popup
+				&__wrap
+					padding: 20px
+		&__close
+			right: 0
+			top: -45px
+		&__title
+			text-align: center
+			margin-bottom: 15px
+		&__subtitle
+			text-align: center
+			br
+				display: none
+		&__form
+			margin-top: 20px
+			
+
+	.thanks
+		&__subtitle
+			br
+				display: none
+			
+	.write
+		max-width: 100%
+		padding: 20px
+		&__list
+			width: calc(100% + 10px)
+			margin-left: -5px
+			margin-right: -5px
+		&__item
+			width: calc(100% / 2 - 10px)
+			margin-left: 5px !important
+			margin-right: 5px !important
+		&__desc
+			margin-top: 14px
+			br
+				display: none
+			
 	.footer
 		&__top
 			display: none
@@ -4148,9 +4905,44 @@ $margin: 15px
 
 		&__requisits, &__contacts, &__dev
 			margin-bottom: 22px
+
+		&__contacts
+			margin-left: auto
+			margin-right: auto
 			
 
 		&__dev
 			margin-left: auto
 			margin-right: auto
 
+
+
+@media screen and (max-width: 767px)
+	.why
+		&__list
+			margin-left: 0
+			margin-right: 0
+			flex-direction: column
+		&__img
+			height: auto
+		&__item
+
+
+@media screen and (max-width: 490px)
+	.r-book
+		&__item
+			flex-wrap: wrap
+			padding: 20px 20px 30px
+		&__img
+			width: 100%
+			height: 300px
+			margin-bottom: 25px
+			overflow: hidden
+			border-radius: 8px
+		&__content
+			width: 100%
+			padding-left: 0
+			
+
+	.footer__contacts
+		margin-right: 0

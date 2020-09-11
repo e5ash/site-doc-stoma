@@ -253,7 +253,8 @@ var input = {
 	$('.r-videos__list').slick({
 		fade: true,
 		prevArrow: arrows.prev,
-		nextArrow: arrows.next
+		nextArrow: arrows.next,
+
 	});
 
 	$('.reviews__list').slick({
@@ -371,6 +372,15 @@ var input = {
 					slidesToScroll: 3,
 					slidesToShow: 3
 				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					infinite: false,
+					slidesToScroll: 1,
+					slidesToShow: 1,
+					variableWidth: true
+				}
 			}
 		]
 	})
@@ -380,6 +390,23 @@ var input = {
 		slidesToShow: 4,
 		prevArrow: arrows.prev,
 		nextArrow: arrows.next,
+		responsive: [
+			{
+				breakpoint: 1199,
+				settings: {
+					slidesToScroll: 2,
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToScroll: 1,
+					slidesToShow: 1,
+					swipe: true,
+				}
+			}
+		]
 	})
 
 	var portfolio = {
@@ -393,10 +420,12 @@ var input = {
 		nextArrow: arrows.next,
 	})
 
-	$('.tabs').each(function(){
+	$('.tabs').each(function(index){
 		var firstEl     = $(this).find('.tabs-nav li:first-of-type'),
 				firstElItem = $(this).find('.tabs-item:first-of-type');
 
+		firstEl.attr('data-tabs-group', index);
+		firstEl.siblings().attr('data-tabs-group', index);
 		firstEl.addClass(cls.selected);
 		firstElItem.addClass(cls.selected);
 		firstElItem.find('.price-list__body').slideDown(300);
@@ -408,10 +437,11 @@ var input = {
 		var href = $(this).attr('href'),
 				el = $(href),
 				li = $(this).parents('li');
+				group = li.attr('data-tabs-group');
 
 
+		$('.tabs-nav li[data-tabs-group =  '+ group +']').removeClass(cls.selected);
 		li.addClass(cls.selected);
-		li.siblings().removeClass(cls.selected);
 
 		if (href.indexOf('price-list-item-all') >= 0) {
 			var tabsItem = $(this).parents('.tabs').find('.tabs-item');
@@ -573,6 +603,17 @@ var input = {
   	services: $('.services__list'),
   	rating: $('.rating__list'),
   	team: $('.team__list'),
+  	priceList: $('.price-list__nav ul'),
+  	rBook: $('.r-book__list'),
+  	shares: $('.shares__list'),
+  	problems: $('.problems__list'),
+  	braces: $('.braces__list'),
+  	implants: $('.implants__list'),
+  	full: $('.full__list'),
+  	solutions: $('.solutions__list'),
+  	types: $('.types__list'),
+  	process: $('.process__list'),
+  	do: $('.do__list'),
   }
   var settings = {
     variableWidth: true,
@@ -594,6 +635,63 @@ var input = {
     infinite: false,
     adaptiveHeight: true
   });
+  slick_on_mobile( swiper.rBook, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.problems, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  
+  slick_on_mobile( swiper.braces, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.implants, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.full, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.solutions, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.types, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.process, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.do, {
+  	swipe: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+  slick_on_mobile( swiper.shares, settings);
+  slick_on_mobile( swiper.priceList, settings);
 
   function slick_on_mobile(slider, settings){
     $(window).on('load resize', function() {
@@ -608,4 +706,17 @@ var input = {
       }
     });
   };
+
+  $('.toltip').on('click', function () {
+  	var text = $(this).find('.toltip__text');
+  	text.slideToggle(300);
+  	$(this).toggleClass(cls.toggle);
+  })
+
+  $(window).on('load resize', function() {
+    if ($(window).width() > 992) {
+    	$('.toltip').removeClass(cls.toggle);
+    	$('.toltip__text').removeAttr('style');
+    }
+  });
 });

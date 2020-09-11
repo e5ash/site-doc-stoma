@@ -22,3 +22,4 @@ mixin problems(title, subtitle, list, quote, img, teamIndex, text)
 								+icon('time-gray')
 								span= "Стаж: " + _team[teamIndex][4]
 							a.doctor__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox data-src="#popup-consult" href="javascript:;") Записаться на срочный прием
+			+swipe('problems__swipe', 'Проведите в сторону, чтобы <br>посмотреть все проблемы')
