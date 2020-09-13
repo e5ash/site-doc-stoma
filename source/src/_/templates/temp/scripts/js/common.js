@@ -259,6 +259,7 @@ var input = {
 
 	$('.reviews__list').slick({
 		slidesToShow: 3,
+		adaptiveHeight: true,
 		prevArrow: arrows.prev,
 		nextArrow: arrows.next,
 		responsive: [

@@ -16,5 +16,5 @@ mixin review(date, text, name, img, stars)
 				
 		.review__img.img
 			+img(img)
-		.review__text=text
-		.review__name=name
+		.review__text!=text
+		.review__name!=name

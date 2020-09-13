@@ -22,10 +22,10 @@
 						.map__text
 							p.--line.--icon
 								+icon('phone-blue')
-								a(href="tel:+7 (812) 111-11-11") +7 (812) 111-11-11
+								a(href="tel:+78126141438") +7 (812) 614-14-38
 							p.--line.--icon
 								+icon('at-blue')
-								a(href="mailto:mail@mail.ru") mail@mail.ru
+								a(href="mailto:info@d-stom.ru") info@d-stom.ru
 					.map__item
 						.map__name Как пройти:
 						.map__text
@@ -36,7 +36,7 @@
 				#map
 				script.
 					function initMap() {
-						var uluru = {lat: 59.8664805, lng: 30.3862003};
+						var uluru = {lat: 59.8664805, lng: (30.3862003 - 0.003)};
 						var map = new google.maps.Map(
 							document.getElementById('map'), {
 								zoom: 15, 
@@ -205,8 +205,21 @@
 							});
 						var marker = new google.maps.Marker(
 						{
-							position: uluru,
+							position: {
+								lat: 59.8664805,
+								lng: 30.3862003
+							},
 							icon: 'upload/placeholder-map.png',
+							map: map
+						}
+						);
+						var marker = new google.maps.Marker(
+						{
+							position: {
+								lat: 59.870685,
+								lng: 30.3779453
+							},
+							icon: 'upload/placeholder-m.png',
 							map: map
 						}
 						);

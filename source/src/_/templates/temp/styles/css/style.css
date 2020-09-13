@@ -1396,23 +1396,23 @@ i {
 
 .persona.--tatyana-ylkina .persona__text {
   top: 309px;
-  right: -15px; }
+  right: 75px; }
 
 .persona.--tatyana-ylkina-lg .persona__img {
   width: 480px;
   height: 739px; }
 
 .persona.--tatyana-ylkina-lg .persona__text {
-  top: 250px;
-  right: -79px; }
+  top: 330px;
+  right: 89px; }
 
 .persona.--tatyana-ylkina-blue .persona__img {
   width: 448px;
   height: 846px; }
 
 .persona.--tatyana-ylkina-blue .persona__text {
-  top: 318px;
-  right: -66px; }
+  top: 390px;
+  right: 34px; }
 
 .persona.--admin .persona__text {
   top: 375px;
@@ -1554,6 +1554,13 @@ i {
     font-weight: 800; }
   .text p.--pl {
     padding-left: 36px; }
+
+.text h3 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-bottom: 20px; }
 
 .text h5 {
   font-size: 16px;
@@ -1896,7 +1903,7 @@ i {
 
 .about__persona {
   position: absolute;
-  right: 125px;
+  right: 15px;
   bottom: 0; }
 
 .qualification {
@@ -1956,6 +1963,17 @@ i {
 
 .page__title {
   padding-bottom: 50px; }
+
+.page__text {
+  padding-bottom: 50px; }
+  .page__text h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 30px; }
+  .page__text ul {
+    margin-bottom: 20px; }
+  .page__text p {
+    margin-bottom: 20px; }
 
 .we {
   padding-top: 20px;
