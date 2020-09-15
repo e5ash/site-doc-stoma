@@ -344,7 +344,7 @@ append content
 						button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-md
 						.form__item.form__checkbox.checkbox.check.--lg.--mlr-md
 							input.checkbox__input(type="checkbox" name="policy" checked="checked")
-							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="policy.html") с политикой конфиденциальности].
 				.questions__img
 					+img('')
 
@@ -451,7 +451,7 @@ append content
 						button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
 						.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
 							input.checkbox__input(type="checkbox" name="policy" checked="checked")
-							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="policy.html") с политикой конфиденциальности].
 
 	.order
 		.case
@@ -473,7 +473,7 @@ append content
 						button.form__item.form__btn.btn.--bg-blue.--lg.--mlr-lg
 						.form__item.form__checkbox.checkbox.check.--lg.--mlr-lg
 							input.checkbox__input(type="checkbox" name="policy" checked="checked")
-							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+							label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="policy.html") с политикой конфиденциальности].
 						.form__item.form__desc
 				.order__persona.persona.--tatyana-ylkina
 					.persona__text

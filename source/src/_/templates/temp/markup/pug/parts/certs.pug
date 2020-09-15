@@ -2,14 +2,59 @@
 	.case
 		.certs__title.h2.tac.c-white Дипломы и сертификаты #[br]специалистов
 		.certs__list.chevrons.--white
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-2.jpg" style="background-image: url('upload/certificates/certificate-2.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-2.jpg" style="background-image: url('upload/certificates/certificate-2.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-2.jpg" style="background-image: url('upload/certificates/certificate-2.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-2.jpg" style="background-image: url('upload/certificates/certificate-2.jpg')")]
-			.certs__item #[.img(data-fancybox="" data-src="upload/certificates/certificate-1.jpg" style="background-image: url('upload/certificates/certificate-1.jpg')")]
+			mixin cert(url)
+				.certs__item #[.img(data-fancybox="" data-src="upload/certificates/" + url  style="background-image: url('upload/certificates/"+ url +"')")]
+			+cert('ylkina-001.jpg')
+			+cert('ylkina-002.jpg')
+			+cert('ylkina-003.jpg')
+			+cert('ylkina-004.jpg')
+			+cert('ylkina-005.jpg')
+			+cert('ylkina-006.jpg')
+			+cert('ylkina-007.jpg')
+			+cert('ylkina-008.jpg')
+			+cert('ylkina-009.jpg')
+			+cert('ylkina-010.jpg')
+			+cert('ylkina-011.jpg')
+			+cert('ylkina-012.jpg')
+			+cert('ylkina-013.jpg')
+			+cert('ylkina-014.jpg')
+			+cert('ylkina-015.jpg')
+			+cert('ylkina-016.jpg')
+			+cert('ylkina-017.jpg')
+			+cert('ylkina-018.jpg')
+			+cert('ylkina-019.jpg')
+			+cert('ylkina-020.jpg')
+			+cert('ylkina-1.jpg')
+			+cert('ylkina-2.jpg')
+			+cert('ylkina-3.jpg')
+			+cert('ylkina-4.jpg')
+			+cert('ylkina-5.jpg')
+			+cert('ylkina-6.jpg')
+			+cert('ylkina-7.jpg')
+			+cert('ylkina-8.jpg')
+			+cert('ylkina-9.jpg')
+			+cert('ylkina-10.jpg')
+			+cert('ylkina-11.jpg')
+			+cert('ylkina-12.jpg')
+			+cert('ylkina-13.jpg')
+			+cert('ylkina-14.jpg')
+			+cert('ylkina-15.jpg')
+			+cert('ylkina-16.jpg')
+			+cert('ylkina-17.jpg')
+			+cert('ylkina-18.jpg')
+			+cert('ylkina-19.jpg')
+			+cert('ylkina-20.jpg')
+			+cert('ylkina-21.jpg')
+			+cert('ylkina-22.jpg')
+			+cert('ylkina-23.jpg')
+			+cert('ylkina-24.jpg')
+			+cert('ylkina-25.jpg')
+
+			+cert('darnotyk-001.jpg')
+			+cert('darnotyk-1.jpg')
+			+cert('darnotyk-002.jpg')
+			+cert('darnotyk-2.jpg')
+			+cert('darnotyk-003.jpg')
+			+cert('darnotyk-3.jpg')
+
 		+swipe('certs__swipe', 'Проведите в сторону, чтобы <br>посмотреть все дипломы', 'white')

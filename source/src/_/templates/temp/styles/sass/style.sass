@@ -664,6 +664,10 @@ body
 		display: flex
 		align-items: center
 		flex-wrap: wrap
+	&__name
+		a
+			&:hover
+				color: $color-blue
 	&__price
 		display: flex
 		align-items: center
@@ -1027,25 +1031,39 @@ body
 		min-width: 160px
 
 	&__list
+		position: relative
 		margin-left: -15px
 		margin-right: -15px
-		margin-bottom: -30px
-		&.--w2
-			.ri
-				&__item
-					width: calc(100% / 2 - 30px)
-		&.--w3
-			.ri
-				&__item
-					width: calc(100% / 3 - 30px)
+		.slick-arrow
+			top: 50%
+			margin-top: -25px
+			background-color: #fff
+			&.slick-prev
+				left: -60px
+			&.slick-next
+				right: -60px
+
+		.slick-track
+			display: flex
+			flex-wrap: wrap
+			&:before, &:after
+				display: none
+		.slick-slide
+			height: auto
+			padding-left: 15px
+			padding-right: 15px
+			> div
+				display: flex
+				flex-wrap: wrap
+				align-items: center
+				justify-content: center
+				height: 100%
+
 	&__item
 		display: flex
 		align-items: center
 		justify-content: center
 		padding: 10px
-		margin-left: 15px
-		margin-right: 15px
-		margin-bottom: 30px
 		background-color: #fff
 		border-radius: 5px
 		
@@ -1771,15 +1789,22 @@ $margin: 15px
 
 	&__data
 		width: 100%
+		h3
+			font-size: 18px
+			font-weight: 700
+			display: block
+			margin-bottom: 10px
 		ul
 			// flex-direction: column
+			+ h3
+				margin-top: 25px
 		li
 			position: relative
 			width: 100%
 			font-size: 18px
 			display: flex
 			align-items: flex-start
-			margin-bottom: 20px
+			margin-bottom: 12px
 			&:last-of-type
 				margin-bottom: 0
 			&:before
@@ -1792,7 +1817,7 @@ $margin: 15px
 				height: 12px
 				background: url('../../imgs/dots.png') repeat-x center
 		u, strong
-			max-width: 50%
+			max-width: 100%
 			background-color: #fff
 		u
 			text-decoration: none
@@ -2155,8 +2180,8 @@ $margin: 15px
 	z-index: 10
 	position: absolute
 	bottom: 100%
-	left: 22px
-	width: 220px
+	left: -10px
+	width: 280px
 	border-radius: 8px
 	background-color: #ffffff
 	text-align: left
@@ -3168,7 +3193,87 @@ $margin: 15px
 				color: #fff
 
 
+.files
+	padding-bottom: 40px
+	&__item
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		background-color: #fff
+		padding: 14px
+		border: 1px solid rgba(0,0,0,0.05)
+		margin-bottom: 10px
+		&:last-of-type
+			margin-bottom: 0
+	&__icon
+		width: 30px
 
+	&__name
+		padding-left: 10px
+		max-width: 700px
+		a
+			color: $color-blue
+			&:hover
+				border-color: $color-blue
+
+
+	&__info
+		// display: none
+
+	&__data
+		display: flex
+		align-items: center
+		margin-left: auto
+
+	&__size
+		width: 165px
+
+	&__download
+		width: 100%
+		max-width: 100px
+		margin-left: 30px
+		
+
+
+.info-b
+	position: relative
+	&:hover
+		.info-b
+			&__text
+				opacity: 1
+				visibility: visible
+	&__icon
+		width: 16px
+		font-size: 0
+	&__text
+		z-index: 5
+		position: absolute
+		top: 50%
+		left: -240px
+		width: 230px
+		font-size: 12px
+		line-height: 14px
+		opacity: 0
+		visibility: hidden
+		color: #fff
+		padding: 14px
+		background-color: $color-blue
+		transform: translateY(-50%)
+		&:after
+			content: ''
+			right: -40px
+			top: 0
+			bottom: 0
+			width: 40px
+			position: absolute
+		li
+			margin-bottom: 3px
+			&:last-of-type
+				margin-bottom: 0
+		strong
+			font-weight: 700
+		u
+			text-decoration: none
 
 .footer
 	&__top
@@ -3197,17 +3302,17 @@ $margin: 15px
 			flex-direction: column
 			margin-bottom: -5px
 			&:nth-of-type(1)
-				width: 115px
+				width: 85px
 			&:nth-of-type(2)
-				width: 130px
+				width: 100px
 			&:nth-of-type(3)
-				width: 110px
+				width: 130px
 			&:nth-of-type(4)
-				width: 215px
+				width: 175px
 			&:nth-of-type(5)
 				width: 205px
 			&:nth-of-type(6)
-				width: 110px
+				width: 145px
 		li
 			font-size: 14px
 			width: 100%
@@ -3218,6 +3323,8 @@ $margin: 15px
 				border-color: $color-blue
 	&__socials
 		width: 190px
+		ul
+
 		
 	&__bottom
 		padding-top: 32px
@@ -3274,6 +3381,8 @@ $margin: 15px
 		
 
 .socials
+	ul
+		justify-content: flex-end
 	li
 		width: 50px
 		margin-right: 20px
@@ -3370,6 +3479,16 @@ $margin: 15px
 				left: 15px
 			&.slick-next
 				right: 15px
+
+	.ri
+		&__list
+			padding-left: 0
+			padding-right: 0
+			.slick-arrow
+				&.slick-prev
+					left: -60px
+				&.slick-next
+					right: -60px
 
 	.will-heal
 		&__list
@@ -3596,6 +3715,10 @@ $margin: 15px
 	.persona.--admin .persona__text
 		top: 280px
 		left: 80px
+
+	.files
+		&__name
+			max-width: 500px
 	.footer
 		&__nav
 			ul
@@ -4888,6 +5011,17 @@ $margin: 15px
 			br
 				display: none
 			
+
+	.files
+		&__name
+			width: calc(100% - 30px)
+			max-width: 100%
+		&__data
+			display: none
+		&__download
+			margin-top: 7px
+			margin-left: 0
+			
 	.footer
 		&__top
 			display: none
@@ -4959,6 +5093,23 @@ $margin: 15px
 			width: 100%
 			padding-left: 0
 			
+
+	.price-list__data
+		li
+			flex-wrap: wrap
+			margin-bottom: 10px
+			&:last-of-type
+				margin-bottom: 0
+			u
+				width: 100%
+				max-width: 100%
+				padding-right: 0
+			strong
+				margin-left: 0
+				width: 100%
+				max-width: 100%
+				padding-left: 0
+
 
 	.footer__contacts
 		margin-right: 0

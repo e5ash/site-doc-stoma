@@ -5,38 +5,22 @@
 			.portfolio__arrows.chevrons.--gray.--md
 		.portfolio__body
 			.portfolio__list
-				.portfolio__item(class=portfolioItemClass)
-					.portfolio__content
-						.portfolio__text
-							h3 С чем обратились
-							p Пациентка обратилась с жалобами на темный цвет зубов, их неправильное положение и большие старые реставрации, изменённые в цвете. По личным соображениям пациентка отказалась от ортодонтии. 
-							h3 решение
-							p Принято решение и проведено микропротезирование керамическими винирами emax цвет BL3, в результате получена красивая улыбка с ровными белыми зубами.
-						a.portfolio__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox data-src="#popup-consult" href="javascript:;") Записаться на консультацию
-					.portfolio__imgs
-						.portfolio__img-wrap
-							.portfolio__img.img(style="background-image: url('upload/portfolio/portfolio-1-1.png')")
-						.portfolio__img-wrap
-							.portfolio__img.img.--blur(style="background-image: url('upload/portfolio/portfolio-1-2.png')")
-							.portfolio__show.show
-								.show__icon
-									+icon('click')
-								.show__title Нажмите чтобы увидеть фото “До”
-				.portfolio__item(class=portfolioItemClass)
-					.portfolio__content
-						.portfolio__text
-							h3 С чем обратились
-							p Пациентка обратилась с жалобами на темный цвет зубов, их неправильное положение и большие старые реставрации, изменённые в цвете. По личным соображениям пациентка отказалась от ортодонтии. 
-							h3 решение
-							p Принято решение и проведено микропротезирование керамическими винирами emax цвет BL3, в результате получена красивая улыбка с ровными белыми зубами.
-						a.portfolio__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox data-src="#popup-consult" href="javascript:;") Записаться на консультацию
-					.portfolio__imgs
-						.portfolio__img-wrap
-							.portfolio__img.img(style="background-image: url('upload/portfolio/portfolio-1-1.png')")
-						.portfolio__img-wrap
-							.portfolio__img.img.--blur(style="background-image: url('upload/portfolio/portfolio-1-2.png')")
-							.portfolio__show.show
-								.show__icon
-									+icon('click')
-								.show__title Нажмите чтобы увидеть фото “До”
+				mixin pi(before, after, text)
+					.portfolio__item(class=portfolioItemClass)
+						.portfolio__content
+							.portfolio__text!= text
+							a.portfolio__btn.btn.--bg-blue.--shadow-blue.--lg(data-fancybox data-src="#popup-consult" href="javascript:;") Записаться на консультацию
+						.portfolio__imgs
+							.portfolio__img-wrap
+								.portfolio__img.img(style="background-image: url('upload/portfolio/"+after+"')")
+							.portfolio__img-wrap
+								.portfolio__img.img.--blur(style="background-image: url('upload/portfolio/"+before+"')")
+								.portfolio__show.show
+									.show__icon
+										+icon('click')
+									.show__title Нажмите чтобы увидеть фото “До”
+				if _portfolio
+					each pi in _portfolio
+						+pi(pi[1], pi[0], pi[2])
+				
 			+swipe('portfolio__swipe', 'Проведите в сторону, чтобы <br>посмотреть другие работы')

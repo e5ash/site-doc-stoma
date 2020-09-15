@@ -18,31 +18,34 @@ footer.footer
 						li
 							a(href="") Врачи
 						li
-							a(href="") Работы
-					ul
-						li
 							a(href="") Лечение зубов
+					ul
 						li
 							a(href="") Протезирование зубов
-					ul
 						li
 							a(href="") Имплантация
+					ul
+						
 						li
 							a(href="") Детская стоматология
-					ul
 						li
 							a(href="") Ортодонтия
-				.footer__socials.socials
 					ul
 						li
-							a(href="https://facebook.com/" target="_blank")
-								+icon('facebook')
+							a(href="") Установка виниров
+						li
+							a(href="") Исправление прикуса
+				.footer__socials.socials
+					ul
+						//- li
+						//- 	a(href="https://facebook.com/" target="_blank")
+						//- 		+icon('facebook')
 						li
 							a(href="https://www.instagram.com/doctor_stom_spb/?hl=ru" target="_blank")
 								+icon('instagram')
-						li
-							a(href="https://vk.com/" target="_blank")
-								+icon('vk')
+						//- li
+						//- 	a(href="https://vk.com/" target="_blank")
+						//- 		+icon('vk')
 	.footer__bottom
 		.case
 			.footer__bottom-wrap.row
@@ -54,9 +57,7 @@ footer.footer
 					.footer__links
 						ul
 							li
-								a(href="") Политика конфиденциальности
-							li
-								a(href="") Пользовательское соглашение
+								a(href="policy.html") Политика конфиденциальности
 							li
 								a(href="ur.html") Юридическая информация
 
@@ -96,9 +97,9 @@ footer.footer
 						label.input__icon
 							+icon('phone-gray')
 				button.form__item.form__btn.btn.--bg-blue.--shadow-blue.--lg.--w-md.--mlr-md Записаться на консультацию
-				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md
+				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md.--required
 					input.checkbox__input(type="checkbox" name="policy" checked="checked")
-					label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+					label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="policy.html" target="_blank") с политикой конфиденциальности].
 		.popup__img
 			+img('employees/employee-4.png')
 
@@ -124,8 +125,8 @@ footer.footer
 						label.input__icon
 							+icon('phone-gray')
 				button.form__item.form__btn.btn.--bg-blue.--shadow-blue.--lg.--w-md.--mlr-md Записаться на консультацию
-				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md
+				.form__item.form__checkbox.checkbox.check.--sm.--w-md.--mlr-md.--required
 					input.checkbox__input(type="checkbox" name="policy" checked="checked")
-					label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="upload/policy.pdf") с политикой конфиденциальности].
+					label.checkbox__label Нажимая на кнопку, Вы даете согласие на обработку своих персональных данных и соглашаетесь #[a(href="policy.html" target="_blank") с политикой конфиденциальности].
 		.popup__img
 			+img('phone-hand.png')

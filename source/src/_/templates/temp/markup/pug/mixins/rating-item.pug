@@ -1,4 +1,4 @@
-mixin ri(img, count, stars, imgs)
+mixin ri(img, count, stars, link, imgs)
 	.rating__item.ri
 		.ri__head.row.i-mid
 			.ri__img
@@ -16,9 +16,9 @@ mixin ri(img, count, stars, imgs)
 						+icon('star-gray')
 						- i++
 				.ri__count-title= "Оценка: " + count
-			a.ri__btn.btn.--bg-blue.--shadow-blue.--md(href="", target="_blank") Все отзывы
+			a.ri__btn.btn.--bg-blue.--shadow-blue.--md(href=link, target="_blank") Все отзывы
 		.ri__body
-			.ri__list.row(class='--w' + imgs.length)
+			.ri__list.chevrons.--gray.--sm
 				each img in imgs
 					.ri__item(data-fancybox="" data-src='upload/reviews/' + img)
 						+img('reviews/' + img)

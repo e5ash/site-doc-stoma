@@ -3,7 +3,7 @@ mixin service(name, price, img, link, data)
 		.service__img.img(style="background-image: url('" + img + "')")
 		.service__content
 			.service__subtitle
-				.service__name.h3=name
+				.service__name.h3 #[a(href=link)= name]
 				.service__price
 					.service__price-icon
 						+icon('ruble')

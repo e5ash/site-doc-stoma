@@ -7,11 +7,15 @@ mixin price-item(id, name, data, text)
 			.price-list__wrap.row(class=priceText==true?'--cols':undefined)
 				if data
 					.price-list__data
-						ul
-							each dataItem in data
-								li
-									u= dataItem[0]
-									strong=dataItem[1]
+						each item in data
+							if item[0]
+								h3= item[0]
+							if item[1]
+								ul
+									each li in item[1]
+										li
+											u= li[0]
+											strong= li[1]
 				if priceText
 					.price-list__text.text
 						h3 В цену входят:

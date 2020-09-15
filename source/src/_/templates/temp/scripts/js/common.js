@@ -579,6 +579,15 @@ var input = {
 	});
 
 
+	$('.ri__list').slick({
+		slidesToScroll: 2,
+		slidesToShow: 2,
+		adaptiveHeight: true,
+		prevArrow: arrows.prev,
+		nextArrow: arrows.next,
+	})
+
+
 	var mPanel = $('.m-panel');
 	$(window).on('load resize scroll', function () {
 		if ($(window).scrollTop() > 0) {
@@ -704,6 +713,21 @@ var input = {
       }
       if (!slider.hasClass('slick-initialized')) {
         return slider.slick(settings);
+      }
+    });
+  };
+
+  slick_on_desktop($('.ri__list'));
+  function slick_on_desktop(slider, settings){
+    $(window).on('load resize', function() {
+      if ($(window).width() < 992) {
+        if (slider.hasClass('slick-initialized')) {
+          slider.slick('unslick');
+        }
+        return
+      }
+      if (!slider.hasClass('slick-initialized')) {
+        return slider.slick('reInit');
       }
     });
   };
