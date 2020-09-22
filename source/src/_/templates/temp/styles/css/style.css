@@ -857,6 +857,9 @@ i {
   .services__name {
     margin-left: 38px;
     margin-right: 38px; }
+  .services__title {
+    width: -webkit-calc(100% - 120px - 76px);
+    width: calc(100% - 120px - 76px); }
 
 .service {
   display: -webkit-box;
@@ -2099,7 +2102,10 @@ i {
     -o-transition: .3s;
     transition: .3s;
     width: -webkit-calc(100% - 20px);
-    width: calc(100% - 20px); }
+    width: calc(100% - 20px);
+    text-transform: lowercase; }
+    .price-list__name:first-letter {
+      text-transform: uppercase; }
   .price-list__icon {
     width: 20px;
     height: 20px;
@@ -3354,8 +3360,18 @@ i {
     max-width: 265px; }
 
 .implant {
+  position: relative;
   padding-top: 95px;
   padding-bottom: 155px; }
+  .implant .case {
+    position: static; }
+  .implant__title {
+    position: absolute;
+    left: 50%;
+    top: 95px;
+    margin-left: -570px; }
+    .implant__title.--toggle {
+      position: fixed; }
   .implant__content {
     width: 470px; }
   .implant__list {
@@ -4132,6 +4148,11 @@ i {
   .certificates__content {
     width: -webkit-calc(100% - 320px);
     width: calc(100% - 320px); }
+  .implant__title {
+    position: static !important;
+    margin-left: 0; }
+  .implant__content, .implant__list {
+    width: 100%; }
   .questions__content {
     margin-left: auto;
     margin-right: auto; }

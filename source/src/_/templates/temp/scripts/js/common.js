@@ -744,4 +744,17 @@ var input = {
     	$('.toltip__text').removeAttr('style');
     }
   });
+
+
+  var implant = {
+  	block: $('.implant'),
+  	title: $('.implant__title')
+  }
+  $(window).on('scroll load', function () {
+  	if ($(window).scrollTop() >= implant.block.offset().top && $(window).scrollTop() <= (implant.block.offset().top + implant.block.height())) {
+  		implant.title.addClass(cls.toggle)
+  	} else {
+  		implant.title.removeClass(cls.toggle)
+  	}
+  })
 });

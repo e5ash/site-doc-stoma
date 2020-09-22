@@ -640,6 +640,8 @@ body
 	&__name
 		margin-left: 38px
 		margin-right: 38px
+	&__title
+		width: calc(100% - 120px - 76px)
 	&__item
 		
 
@@ -1754,6 +1756,9 @@ $margin: 15px
 	&__name
 		transition: .3s
 		width: calc(100% - 20px)
+		text-transform: lowercase
+		&:first-letter
+			text-transform: uppercase
 	&__icon
 		width: 20px
 		height: 20px
@@ -2867,8 +2872,18 @@ $margin: 15px
 
 
 .implant
+	position: relative
 	padding-top: 95px
 	padding-bottom: 155px
+	.case
+		position: static
+	&__title
+		position: absolute
+		left: 50%
+		top: 95px
+		margin-left: -570px
+		&.--toggle
+			position: fixed
 	&__content
 		width: 470px
 	&__list
@@ -3607,6 +3622,12 @@ $margin: 15px
 		&__content
 			width: calc(100% - 320px)
 
+	.implant
+		&__title
+			position: static !important
+			margin-left: 0
+		&__content, &__list
+			width: 100%
 	.questions
 		&__content
 			margin-left: auto
